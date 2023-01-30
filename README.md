@@ -40,3 +40,215 @@ pip uninstall -y -r <(pip freeze)
 cd ./docker
 docker-compose up
 ```
+
+## API Endpoints
+
+### Negation
+
+1. Will reject any invalid pair.
+
+```
+POST http://localhost:5000/api/logic/negation?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1
+```
+
+```JSON
+[
+    [
+        [
+            1,
+            1
+        ],
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            1
+        ],
+        [
+            0,
+            0
+        ]
+    ],
+    [
+        [
+            false,
+            true,
+            false,
+            true
+        ]
+    ]
+]
+```
+
+### Conjunction
+
+```
+POST http://localhost:5000/api/logic/conjunction?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1
+```
+
+```JSON
+[
+    [
+        [
+            1,
+            1
+        ],
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            0,
+            1
+        ],
+        [
+            1,
+            1
+        ],
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            0,
+            1
+        ]
+    ],
+    [
+        [
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+        ]
+    ]
+]
+```
+
+### Implication
+
+```
+POST http://localhost:5000/api/logic/implication?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1
+```
+
+```JSON
+[
+    [
+        [
+            1,
+            1
+        ],
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            0,
+            1
+        ],
+        [
+            1,
+            1
+        ],
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            0,
+            1
+        ]
+    ],
+    [
+        [
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true
+        ]
+    ]
+]
+```
+
+### Disjunction
+
+```
+POST http://localhost:5000/api/logic/disjunction?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1
+```
+
+```JSON
+[
+    [
+        [
+            1,
+            1
+        ],
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            0,
+            1
+        ],
+        [
+            1,
+            1
+        ],
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            0,
+            1
+        ]
+    ],
+    [
+        [
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true
+        ]
+    ]
+]
+```

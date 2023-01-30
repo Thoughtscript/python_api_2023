@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
         MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 100, TEST)
         # print(MODEL)
-        # helpers.saveModel(MODEL, 'disjunction')
+        helpers.saveModel(MODEL, 'disjunction')
 
         # --------------------------------------------------------------- #
         # Now, let's save off the training data above (results) and ...
