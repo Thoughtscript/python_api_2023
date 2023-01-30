@@ -1,0 +1,3 @@
+# Server Dependencies
+flask
+flask-sqlalchemy
