@@ -175,10 +175,10 @@ def predict_ann(X, parameters):
 
 # Layers
 
-def layers(X, Y, parameters):
+def layers(X, Y, parameters, learning_rate):
     AL, caches = L_model_forward(X, parameters)
     grads = L_model_backward(AL, Y, caches)
-    parameters = update_parameters(parameters, grads)
+    parameters = update_parameters(parameters, grads, learning_rate)
 
     predictions = predict(AL)
     print(AL)

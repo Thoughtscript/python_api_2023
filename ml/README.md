@@ -364,3 +364,7 @@ Since, **Negation** and **Conjunction** are 100% accurate one can interdefine th
 (A ∨ B) ≡ ¬(¬A ∧ ¬B)
 (A → B) ≡ ¬(A ∧ ¬B)
 ```
+
+## Academic Work
+
+1. Cool paper on how to implement **Logic Learning Networks**: https://arxiv.org/pdf/1904.01554.pdf.

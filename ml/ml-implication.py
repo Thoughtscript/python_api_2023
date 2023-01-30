@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
             for i in range(0, iterations):
 
-                predict, AL, parameters = helpers.layers(DATA, LABELS, parameters)
+                predict, AL, parameters = helpers.layers(DATA, LABELS, parameters, .25)
 
                 if (predict == TEST).all():
                     found = i
@@ -34,7 +34,7 @@ if __name__ == '__main__':
         # 1st layer is same as DATA.T.shape[0]
         LAYERS = np.array([DATA.T.shape[0], DATA.T.shape[1], 1])
 
-        MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 300, TEST)
+        MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 100, TEST)
         # print(MODEL)
 
         # --------------------------------------------------------------- #

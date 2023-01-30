@@ -9,8 +9,5 @@ if __name__ == '__main__':
 
         initHandlers()
 
-
-
-
     except Exception as ex:
         print('Exception: ' + str(ex))

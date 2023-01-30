@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
             for i in range(0, iterations):
 
-                predict, AL, parameters = helpers.layers(DATA, LABELS, parameters)
+                predict, AL, parameters = helpers.layers(DATA, LABELS, parameters, 1.45)
 
                 if (predict == TEST).all():
                     found = i
