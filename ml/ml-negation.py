@@ -2,6 +2,7 @@
 
 import helpers
 import numpy as np
+import save
 
 if __name__ == '__main__':
 
@@ -35,6 +36,7 @@ if __name__ == '__main__':
 
         MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 100, TEST)
         # print(MODEL)
+        save.saveModel(MODEL, 'negation')
 
         # --------------------------------------------------------------- #
         # Now, let's save off the training data above (results) and ...

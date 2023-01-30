@@ -356,6 +356,8 @@ Be forewarned that the models are fairly sensitive to the **Learning Rate**. Som
        [0 0]]
       ```
 
+> Note that `False` and `True` are modeled as: `[0, 0]` and `[1,1]`, respectively.
+
 ## Alternatively
 
 Since, **Negation** and **Conjunction** are 100% accurate one can interdefine the other two:

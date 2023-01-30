@@ -2,6 +2,7 @@
 
 import helpers
 import numpy as np
+import save
 
 if __name__ == '__main__':
 
@@ -35,7 +36,8 @@ if __name__ == '__main__':
         LAYERS = np.array([DATA.T.shape[0], DATA.T.shape[1], 1])
 
         MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 100, TEST)
-        # print(MODEL)
+        #print(MODEL)
+        save.saveModel(MODEL, 'disjunction')
 
         # --------------------------------------------------------------- #
         # Now, let's save off the training data above (results) and ...
