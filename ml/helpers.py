@@ -185,3 +185,14 @@ def layers(X, Y, parameters, learning_rate):
     print("Predict: " + str(predictions))
 
     return predictions, AL, parameters
+
+# Save and Load
+
+## Save a dict not an np.array
+def saveModel(model, file_name):
+    np.save("../models/" + file_name, model)
+
+## Load the dict item() not an np.array
+def loadModel(file_name):
+    loaded = np.load("../models/" + file_name,  allow_pickle=True)
+    return loaded.item()

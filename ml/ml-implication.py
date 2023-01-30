@@ -2,7 +2,6 @@
 
 import helpers
 import numpy as np
-import save
 
 if __name__ == '__main__':
 
@@ -37,7 +36,7 @@ if __name__ == '__main__':
 
         MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 100, TEST)
         # print(MODEL)
-        save.saveModel(MODEL, 'implication')
+        helpers.saveModel(MODEL, 'implication')
 
         # --------------------------------------------------------------- #
         # Now, let's save off the training data above (results) and ...
@@ -55,7 +54,7 @@ if __name__ == '__main__':
         testResult3 = helpers.predict_ann(DATA.T, MODEL)
         print("Test set 3: " + str(testResult3) + " from " + str(DATA))
 
-        DATA = np.array([[0, 1], [1, 0], [1, 1], [0, 0]])
+        DATA = np.array([[0, 1], [1, 0], [1, 1], [0, 0], [1, 1], [0, 0]])
         testResult4 = helpers.predict_ann(DATA.T, MODEL)
         print("Test set 4: " + str(testResult4) + " from " + str(DATA))
 
@@ -63,7 +62,7 @@ if __name__ == '__main__':
         testResult5 = helpers.predict_ann(DATA.T, MODEL)
         print("Test set 5: " + str(testResult5) + " from " + str(DATA))
 
-        DATA = np.array([[1,0], [1,0], [1,0], [1,0]])
+        DATA = np.array([[1,0], [1,0], [1,0], [1,0], [1, 1], [0, 0]])
         testResult6 = helpers.predict_ann(DATA.T, MODEL)
         print("Test set 6: " + str(testResult6) + " from " + str(DATA))
 

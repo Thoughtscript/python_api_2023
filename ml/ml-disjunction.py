@@ -2,7 +2,6 @@
 
 import helpers
 import numpy as np
-import save
 
 if __name__ == '__main__':
 
@@ -36,8 +35,8 @@ if __name__ == '__main__':
         LAYERS = np.array([DATA.T.shape[0], DATA.T.shape[1], 1])
 
         MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 100, TEST)
-        #print(MODEL)
-        save.saveModel(MODEL, 'disjunction')
+        # print(MODEL)
+        # helpers.saveModel(MODEL, 'disjunction')
 
         # --------------------------------------------------------------- #
         # Now, let's save off the training data above (results) and ...
@@ -62,6 +61,13 @@ if __name__ == '__main__':
         DATA = np.array([[0, 0], [0, 0], [0, 0], [0, 0]])
         testResult5 = helpers.predict_ann(DATA.T, MODEL)
         print("Test set 5: " + str(testResult5) + " from " + str(DATA))
+
+        DATA = np.array([
+            [1, 1], [0, 0], [1, 0], [0, 1], [1, 1], [0,0], [1,0], [0,1], 
+            [1, 1], [0, 0], [1, 0], [0, 1], [1, 1], [0,0], [1,0], [0,1]
+        ])
+        testResult6 = helpers.predict_ann(DATA.T, MODEL)
+        print("Test set 6: " + str(testResult6) + " from " + str(DATA))
 
     except Exception as ex:
 
