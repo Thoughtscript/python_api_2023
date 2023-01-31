@@ -1,3 +1,9 @@
 # Server Dependencies
 flask
+
+# SQL Dependencies
 flask-sqlalchemy
+mysqlclient
+
+# ML Dependencies
+numpy

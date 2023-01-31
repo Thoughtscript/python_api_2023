@@ -252,3 +252,78 @@ POST http://localhost:5000/api/logic/disjunction?test=1,1;0,0;1,0;0,1;1,1;0,0;1,
     ]
 ]
 ```
+
+### Scan Examples
+
+```
+GET http://localhost:5000/api/db/example
+```
+
+```JSON
+["{ id: 1, name: 'example_a' }","{ id: 2, name: 'example_b' }","{ id: 3, name: 'example_c' }","{ id: 4, name: 'example_d' }"]
+```
+
+### Get Example By ID
+
+```
+GET http://localhost:5000/api/db/example/1
+```
+
+```JSON
+["{ id: 1, name: 'example_a' }"]
+```
+
+### Create Example
+
+```
+POST http://localhost:5000/api/db/example
+```
+
+Body `form-data`:
+
+```
+name created
+```
+
+```JSON
+[
+    "{ id: 5, name: 'created' }"
+]
+```
+
+### Update Example By ID
+```
+PUT http://localhost:5000/api/db/example/1
+```
+
+Body `form-data`:
+```
+name updated
+```
+
+```JSON
+[
+    "{ id: 1, name: 'updated' }"
+]
+```
+
+### Delete Example By ID
+
+```
+DELETE http://localhost:5000/api/db/example/1
+```
+
+Body `form-data`:
+```
+name updated
+```
+
+```JSON
+[
+    "{ id: 1, name: 'updated' }"
+]
+```
+
+## Resources and Links
+
+1. https://towardsdatascience.com/how-to-insert-dummy-data-into-databases-using-flask-sqlalchemy-9c59efab4527
