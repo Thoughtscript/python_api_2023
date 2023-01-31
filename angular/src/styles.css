@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+html, body, ng-root {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poiret One', cursive;
+    font-size: 22px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    opacity: .4;
+    color: gray;
+}
+
+li {
+    display: inline-block;
+}
+
+footer {
+    bottom: 0;
+    position: fixed;
+    padding: 25px;
+    width: 100%;
+    min-height: 4%;
+}
+
+footer > a {
+    padding-left: 10%;
+    position: relative;
+    left: 17.5%;
+}
+
+header {
+    top: 0;
+    position: fixed;
+    opacity: .8;
+    width: 100%;
+    min-height: 7%;
+}
+
+header > h1 {
+    position: relative;
+    left: 7%;
+    color: #fff;
+    max-width: 25%;
+}
+
+nav {
+    position: fixed;
+    left: 60%;
+    font-size: 22px;
+    top: 2.5%;
+}
+
+nav > ul > li > a {
+    padding-left: 25px;
+}
+
+home, example {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -99999;
+}
+
+
+home, example {
+    background: url(https://images.unsplash.com/photo-1496277397776-ca8089ecc5b7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8788c40854a2dece7b70927c31806802&auto=format&fit=crop&w=1950&q=80);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;  
+}
+
+example > main > div#flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    position: relative;
+    top: 250px;
+
+    /* text-align: center; */
+    justify-content: center;
+    /* align-items: center; */
+
+    color: white;
+}
+
+tr > th {
+    padding-right: 75px;
+}
+
+tr > td, tr > th {
+    /* align-content: center; */
+}

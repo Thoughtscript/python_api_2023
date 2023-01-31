@@ -15,7 +15,7 @@ def postExample():
 
     return [str(result)]
 
-@app.route("/api/db/example", methods=['GET'])
+@app.route("/api/db/examples", methods=['GET'])
 def scanExamples():
     results = scan_examples()
     response = []

@@ -1,6 +1,6 @@
 # python_api
 
-[![](https://img.shields.io/badge/Python-3.8.2-yellow.svg)](https://www.python.org/downloads/) [![](https://img.shields.io/badge/React-18.2.0-orange.svg)](https://reactjs.org) [![](https://img.shields.io/badge/parcel-2.7.0-royalblue.svg)](https://parceljs.org/) [![](https://img.shields.io/badge/Docker-blue.svg)](https://www.docker.com/)
+[![](https://img.shields.io/badge/Python-3.8.2-yellow.svg)](https://www.python.org/downloads/) [![](https://img.shields.io/badge/Angular-v15-1976d2.svg)](https://angular.io/) [![](https://img.shields.io/badge/Docker-blue.svg)](https://www.docker.com/) [![](https://img.shields.io/badge/Bitnami-MySQL-red.svg)](https://hub.docker.com/r/bitnami/mysql)
 
 ## Python3
 
@@ -32,6 +32,12 @@ Clear environment PIP dependencies:
 
 ```bash
 pip uninstall -y -r <(pip freeze)
+```
+
+## Angular
+
+```
+npm install -g @angular/cli
 ```
 
 ## Docker
@@ -256,7 +262,7 @@ POST http://localhost:5000/api/logic/disjunction?test=1,1;0,0;1,0;0,1;1,1;0,0;1,
 ### Scan Examples
 
 ```
-GET http://localhost:5000/api/db/example
+GET http://localhost:5000/api/db/examples
 ```
 
 ```JSON
