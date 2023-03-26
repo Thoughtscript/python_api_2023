@@ -4,7 +4,7 @@ import numpy as np
 
 # https://www.geeksforgeeks.org/python-import-module-outside-directory/
 import importlib.util  
-helpers_file = importlib.util.spec_from_file_location("helpers", "G:/_active/python_api/ml/helpers.py")   
+helpers_file = importlib.util.spec_from_file_location("helpers", "G:/_core_examples/python_api/ml/helpers.py")   
 helpers = importlib.util.module_from_spec(helpers_file)       
 helpers_file.loader.exec_module(helpers)
 

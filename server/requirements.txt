@@ -1,5 +1,6 @@
 # Server Dependencies
 flask
+flask[async]
 flask-cors
 
 # SQL Dependencies

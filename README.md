@@ -40,6 +40,11 @@ pip uninstall -y -r <(pip freeze)
 npm install -g @angular/cli
 ```
 
+Update:
+```
+ng update @angular/cli @angular/core
+```
+
 ## Docker
 
 ```bash

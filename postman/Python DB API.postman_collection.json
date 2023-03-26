@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "4daf1778-62b6-4b33-b32d-3e45cbf77cc9",
+		"name": "Python DB API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22810484"
+	},
+	"item": [
+		{
+			"name": "Get Example By ID #1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"{ id: 1, name: 'example_a' }\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/db/example/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"example",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Example By ID #100",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"None\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/db/example/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"example",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Example",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"{ id: 5, name: 'testseteststestes' }\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "testseteststestes",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/db/example",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"example"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Example By ID #2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"{ id: 2, name: 'example_b' }\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/db/example/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"example",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Example By ID #5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"{ id: 5, name: 'testseteststestes' }\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/db/example/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"example",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scan Examples",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"{ id: 1, name: 'example_a' }\", \"{ id: 2, name: 'example_b' }\", \"{ id: 3, name: 'example_c' }\", \"{ id: 4, name: 'example_d' }\", \"{ id: 5, name: 'testseteststestes' }\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/db/examples",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"examples"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Example By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"{ id: 1, name: 'updated' }\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "updated",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/db/example/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"example",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Example By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"{ id: 1, name: 'updated' }\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "updated",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/db/example/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"example",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Example By ID #1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([\"None\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/db/example/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"example",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scan Examples #2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson).to.eql([ \"{ id: 2, name: 'example_b' }\", \"{ id: 3, name: 'example_c' }\", \"{ id: 4, name: 'example_d' }\", \"{ id: 5, name: 'testseteststestes' }\"])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/db/examples",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"db",
+						"examples"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

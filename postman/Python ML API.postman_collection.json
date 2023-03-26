@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "cbf988f4-9421-4d97-b347-a008d2d16208",
+		"name": "Python ML API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22810484"
+	},
+	"item": [
+		{
+			"name": "Disjunction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([true, false, true, true, true, false, true, true ])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/logic/disjunction?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"logic",
+						"disjunction"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Implication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([true, true, false, true, true, true, false, true ])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/logic/implication?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"logic",
+						"implication"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Conjunction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([true, false, false, false, true, false, false, false ])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/logic/conjunction?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"logic",
+						"conjunction"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([ false, true, false, true ])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/logic/negation?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"logic",
+						"negation"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
