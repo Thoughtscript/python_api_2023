@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cbf988f4-9421-4d97-b347-a008d2d16208",
+		"_postman_id": "8ea4de48-5700-4cf4-9868-955c8ac8366d",
 		"name": "Python ML API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22810484"
@@ -22,7 +22,8 @@
 							"  pm.expect(responseJson[0]).to.eql([true, false, true, true, true, false, true, true ])\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -30,12 +31,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/logic/disjunction?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1",
+					"raw": "http://localhost:5001/api/logic/disjunction?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "5001",
 					"path": [
 						"api",
 						"logic",
@@ -44,7 +45,7 @@
 					"query": [
 						{
 							"key": "test",
-							"value": "1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1"
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
 						}
 					]
 				}
@@ -67,7 +68,8 @@
 							"  pm.expect(responseJson[0]).to.eql([true, true, false, true, true, true, false, true ])\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -75,12 +77,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/logic/implication?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1",
+					"raw": "http://localhost:5001/api/logic/implication?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "5001",
 					"path": [
 						"api",
 						"logic",
@@ -89,7 +91,7 @@
 					"query": [
 						{
 							"key": "test",
-							"value": "1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1"
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
 						}
 					]
 				}
@@ -112,7 +114,8 @@
 							"  pm.expect(responseJson[0]).to.eql([true, false, false, false, true, false, false, false ])\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -120,12 +123,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/logic/conjunction?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1",
+					"raw": "http://localhost:5001/api/logic/conjunction?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "5001",
 					"path": [
 						"api",
 						"logic",
@@ -134,7 +137,7 @@
 					"query": [
 						{
 							"key": "test",
-							"value": "1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1"
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
 						}
 					]
 				}
@@ -157,7 +160,8 @@
 							"  pm.expect(responseJson[0]).to.eql([ false, true, false, true ])\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -165,12 +169,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/logic/negation?test=1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1",
+					"raw": "http://localhost:5001/api/logic/negation?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "5001",
 					"path": [
 						"api",
 						"logic",
@@ -179,7 +183,7 @@
 					"query": [
 						{
 							"key": "test",
-							"value": "1,1;0,0;1,0;0,1;1,1;0,0;1,0;0,1"
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
 						}
 					]
 				}

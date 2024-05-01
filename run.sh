@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-# sleep 3.5 && cd docker && docker-compose-up
+echo please use "docker-compose up"
 
-cd ml && python3 ml-conjunction.py && python3 ml-disjunction.py && python3 ml-implication.py && python3 ml-negation.py &
+# docker-compose-up
 
-sleep 3.5 && cd angular && npm i && ng serve -o &
+# The following represent how to run the scripts in python or js without docker (you will still need to spin up the database):
 
-sleep 5.5 && cd server && python3 main.py &
-
-wait
+## cd backend/ml && python3 ml-conjunction.py && python3 ml-disjunction.py && python3 ml-implication.py && python3 ml-negation.py &
+## sleep 3.5 && cd angular && npm i && ng serve -o &
+## sleep 5.5 &&  cd backend/server && python3 main.py &
+## wait

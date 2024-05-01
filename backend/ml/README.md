@@ -2,9 +2,9 @@
 
 Very simple examples I've extended from some Coursera/classwork I did.
 
-These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra**.
+These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra**. Again, we're striving to *teach* a computer logic here rather than using deductive or Boolean clauses within a programming language to enforce certain kinds of basic inferences (of course we're still using such a programming language under the hood LOL).
 
-Be forewarned that the models are fairly sensitive to the **Learning Rate**. Some will fail to generate a solution if the **Learning Rate** is above `2`, etc. 
+> Some humans take a long time to pick up **Classical Logic** (and some never de). Our **Deep Learning** network will pick up 100% accurate deduction concepts in a few milliseconds. Be forewarned however that the models are fairly sensitive to the **Learning Rate**. Some will fail to generate a solution if the **Learning Rate** is above `2`, etc. 
 
 1. Implication: set `learning_rate = .25` - added several additional data points for problematic entries (`1&0`):
 
@@ -358,14 +358,16 @@ Be forewarned that the models are fairly sensitive to the **Learning Rate**. Som
 
 > Note that `False` and `True` are modeled as: `[0, 0]` and `[1,1]`, respectively.
 
-## Alternatively
+## An Alternative Approach
 
-Since, **Negation** and **Conjunction** are 100% accurate one can interdefine the other two:
+Before I got the **Learning Rates** correct, I was thinking it might be beyond my current skillset to *teach* an arbitrary machine how to do Boolean Algebra. Here's an alternative path/signpost, since **Negation** and **Conjunction** are 100% accurate one can interdefine the other two:
 
 ```plaintext
 (A ∨ B) ≡ ¬(¬A ∧ ¬B)
 (A → B) ≡ ¬(A ∧ ¬B)
 ```
+
+> So, we could use the above if only two of the models worked (and the rest didn't). In any event, I got the above to work shortly after speculating about this.
 
 ## Academic Work
 

@@ -1,0 +1,21 @@
+FROM python:3.8.2
+
+RUN echo "Creating working dir and copying files"
+RUN mkdir /app
+WORKDIR /app
+COPY . .
+
+# update pip globally within the container
+RUN python3 -m pip install --upgrade pip
+# update requirements by directory
+RUN cd ml && python3 -m pip install -r requirements.txt
+# run the machine learning scripts to save off the annModels within the image
+# the logs for these scripts will now show in Docker Desktop
+RUN cd ml && python3 ml-conjunction.py && python3 ml-disjunction.py && python3 ml-implication.py && python3 ml-negation.py
+
+# this is apparently a required dependency of SQLAlchemy
+RUN apt-get update && apt-get install -y default-mysql-client default-libmysqlclient-dev
+RUN cd server && python3 -m pip install -r requirements.txt
+# host and ports are set in server/main.py but they could be passed below instead
+# these are required to bind the ips and ports correctly
+CMD [ "python3", "server/main.py"]

@@ -190,9 +190,9 @@ def layers(X, Y, parameters, learning_rate):
 
 ## Save a dict not an np.array
 def saveModel(model, file_name):
-    np.save("../annModels/" + file_name, model)
+    np.save("/app/annModels/" + file_name, model)
 
 ## Load the dict item() not an np.array
 def loadModel(file_name):
-    loaded = np.load("../annModels/" + file_name,  allow_pickle=True)
+    loaded = np.load("/app/annModels/" + file_name,  allow_pickle=True)
     return loaded.item()

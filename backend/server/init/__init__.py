@@ -1,6 +1,8 @@
 from flask import *
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+import logging
+import sys
 
 """
 Initialization / app context.
@@ -14,8 +16,13 @@ def init_app():
     app = get_internal_app()
     CORS(app, resources={r"/api/*": {"origins": "*"}})
     
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://example:example@localhost/example'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://example:example@mysql:3306/example'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    # Logging
+    app.logger.addHandler(logging.StreamHandler(sys.stdout))
+    app.logger.setLevel(logging.INFO)
+    # Log using: app.logger.info(my_var)
 
     # Split the db and app initialization
     # Set here instead of above
