@@ -8,7 +8,7 @@ Run the following from the root dir:
 docker-compose up
 ```
 
-That should spin up each subservice. (**NOTE:** the `backend` service will continually restart until the `mysql` service has fully initialized) Otherwise you can launch each service individually by:
+That should spin up each subservice. (**NOTE:** the `backend` service will continually restart until the `mysql` service has fully initialized.) Otherwise you can launch each service individually by:
 
 1. Commenting out everything in `docker-compose.yml` except for:
 
@@ -182,6 +182,7 @@ Generates Boolean, bivalent, classical, logic results from ***Deep Learning Line
     * Docker `POST http://localhost:5001/api/logic/implication?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
     * Standalone `POST http://localhost:5000/api/logic/implication?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
 
+    Response:
     ```JSON
     [
         [
