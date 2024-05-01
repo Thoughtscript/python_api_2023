@@ -71,7 +71,7 @@ A test endpoint to verify that requests are getting through and the app is expos
 
 ### Logic API
 
-Generates Boolean, bivalent, classical, logic results from ***Deep Learning Linear Regression*** models (it doesn't use simple programmatic, *native*, Boolean clauses or ***Automated Theorem Proving*** techniques).
+Generates Boolean, bivalent, classical, logic results from ***Deep Learning Linear Regression*** models (it doesn't use simple programmatic, *native*, Boolean clauses or ***Automated Theorem Proving*** techniques). Also, inferences that exceed the standard Boolean operations (**Material Conditional**/**Implication**, **Conjunction**, **Disjunction**, **Negation** - for example, adding **NAND**).
 
 > This mirrors research into how one would ***teach*** a computer logic ***rather than stipulate how logic works*** like we do within programming languages. Read more [here](backend/ml/README.md).
 
@@ -284,6 +284,65 @@ Generates Boolean, bivalent, classical, logic results from ***Deep Learning Line
                 true,
                 true,
                 false,
+                true,
+                true
+            ]
+        ]
+    ]
+    ```
+
+1. **NAND**
+    * Supply sequences of `0,1` (left conjunct `False`, right conjunct `True`), `1,1` (left conjunct `True`, right conjunct `True`), `1,0` (left conjunct `True`, right conjunct `False`), `0,0` (left conjunct `False`, right conjunct `False`).
+    * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
+        * `1,0` at index `i` will map to `true` at index `i`.
+    * Docker `POST http://localhost:5001/api/logic/nand?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
+    * Standalone `POST http://localhost:5000/api/logic/nand?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
+
+    Response:
+    ```JSON
+    [
+        [
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ]
+        ],
+        [
+            [
+                false,
+                true,
+                true,
+                true,
+                false,
+                true,
                 true,
                 true
             ]

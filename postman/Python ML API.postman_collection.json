@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8ea4de48-5700-4cf4-9868-955c8ac8366d",
+		"_postman_id": "a351bf81-3039-421e-bc44-6b3ae7ad97a9",
 		"name": "Python ML API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22810484"
@@ -179,6 +179,52 @@
 						"api",
 						"logic",
 						"negation"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nand",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([false, true, true, true, false, true, true, true])\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/logic/nand?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"logic",
+						"nand"
 					],
 					"query": [
 						{

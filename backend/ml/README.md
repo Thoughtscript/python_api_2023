@@ -356,7 +356,81 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
        [0 0]]
       ```
 
-> Note that `False` and `True` are modeled as: `[0, 0]` and `[1,1]`, respectively.
+      > Note that `False` and `True` are modeled as: `[0, 0]` and `[1,1]`, respectively.
+
+5. NAND: set `learning_rate = 1.175`
+
+      ```bash
+      python3 ml-nand.py
+
+      Data entry 1&0 with label 1
+      Data entry 0&1 with label 1
+      Data entry 1&1 with label 0
+      Data entry 0&0 with label 1
+      Data entry 1&1 with label 0
+      [[0.63767246 0.5        0.59235286 0.5        0.59235286]]
+      Predict: [[ True False  True False  True]]
+      [[0.66134185 0.51847616 0.67350126 0.54007131 0.67350126]]
+      Predict: [[ True  True  True  True  True]]
+      [[0.59342104 0.53531612 0.65618829 0.53333355 0.65618829]]
+      Predict: [[ True  True  True  True  True]]
+      [[0.49645589 0.53106508 0.57581129 0.5183503  0.57581129]]
+      Predict: [[False  True  True  True  True]]
+      [[0.45160645 0.53444472 0.50323834 0.52268195 0.50323834]]
+      Predict: [[False  True  True  True  True]]
+      [[0.43860289 0.55092789 0.46023867 0.53967998 0.46023867]]
+      Predict: [[False  True False  True False]]
+      [[0.4497723  0.57281358 0.44044255 0.56115066 0.44044255]]
+      Predict: [[False  True False  True False]]
+      [[0.46481511 0.59408675 0.42982669 0.58087936 0.42982669]]
+      Predict: [[False  True False  True False]]
+      [[0.47737196 0.6136568  0.42337418 0.59726687 0.42337418]]
+      Predict: [[False  True False  True False]]
+      [[0.4880123  0.6319401  0.42461952 0.61049883 0.42461952]]
+      Predict: [[False  True False  True False]]
+      [[0.49620888 0.64909903 0.43549042 0.62029088 0.43549042]]
+      Predict: [[False  True False  True False]]
+      [[0.50144781 0.66561167 0.45783992 0.62616717 0.45783992]]
+      Predict: [[ True  True False  True False]]
+      ANN arrived at conclusion: [[ True  True False  True False]] after 11 iterations
+      Test set 1: [[False  True  True  True]] from [[1 1]
+       [0 0]
+       [1 0]
+       [0 1]]
+      Test set 2: [[ True False False  True]] from [[0 1]
+       [1 1]
+       [1 1]
+       [0 1]]
+      Test set 3: [[False False False False]] from [[1 1]
+       [1 1]
+       [1 1]
+       [1 1]]
+      Test set 4: [[ True  True  True  True]] from [[0 1]
+      [0 1]
+       [0 1]
+       [0 1]]
+      Test set 5: [[ True  True  True  True]] from [[0 0]
+       [0 0]
+       [0 0]
+       [0 0]]
+      Test set 6: [[False  True  True  True False  True  True  True False  True  True  True
+      False  True  True  True]] from [[1 1]
+       [0 0]
+       [1 0]
+       [0 1]
+       [1 1]
+       [0 0]
+       [1 0]
+       [0 1]
+       [1 1]
+       [0 0]
+       [1 0]
+       [0 1]
+       [1 1]
+       [0 0]
+       [1 0]
+       [0 1]]
+      ```
 
 ## An Alternative Approach
 

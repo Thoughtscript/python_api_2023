@@ -19,6 +19,7 @@ DISJUNCTION_MODEL = helpers.loadModel('disjunction.npy')
 NEGATION_MODEL = helpers.loadModel('negation.npy')
 CONJUNCTION_MODEL = helpers.loadModel('conjunction.npy')
 IMPLICATION_MODEL = helpers.loadModel('implication.npy')
+NAND_MODEL = helpers.loadModel('nand.npy')
 
 async def handleRequest(request, reject_unsame = False):
     data = request.args.get('test', '')
@@ -66,4 +67,11 @@ async def implication():
     input = await handleRequest(request)
     DATA = np.array(input)
     response = helpers.predict_ann(DATA.T, IMPLICATION_MODEL)
+    return [input, response.tolist()]
+
+@app.route("/api/logic/nand", methods=['POST'])
+async def nand():
+    input = await handleRequest(request)
+    DATA = np.array(input)
+    response = helpers.predict_ann(DATA.T, NAND_MODEL)
     return [input, response.tolist()]
