@@ -38,6 +38,7 @@ That should spin up each subservice. (**NOTE:** the `backend` service will conti
     python3 ml-disjunction.py 
     python3 ml-implication.py
     python3 ml-negation.py
+    python3 ml-nand.py
     ```
 
    To generate the Machine Learning models.
