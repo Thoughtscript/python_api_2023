@@ -52,7 +52,7 @@ That should spin up each subservice. (**NOTE:** the `backend` service will conti
     python3 main.py
     ```
 
-> Generally speaking, the necessary config, settings, and commands are available within [docker-compose.yml](docker-compose.yml), backend [dockerfile](backend/dockerfile), frontend [dockerfile](angular/dockerfile), [angular.json](angular/angular.json), and [main.py](backend/server/main.py) respectively. So make recourse to those if you encounter problems.
+> Generally speaking, the necessary config, settings, and commands are available within [docker-compose.yml](docker-compose.yml), backend [dockerfile](backend/dockerfile), frontend [dockerfile](angular/dockerfile), [angular.json](angular/angular.json), and [main.py](backend/server/main.py), respectively. So, please make recourse to those if you encounter problems.
 
 ## Angular Frontend
 
@@ -72,9 +72,11 @@ A test endpoint to verify that requests are getting through and the app is expos
 
 ### Logic API
 
-Generates Boolean, bivalent, classical, logic results from ***Deep Learning Linear Regression*** models (it doesn't use simple programmatic, *native*, Boolean clauses or ***Automated Theorem Proving*** techniques). Also, inferences that exceed the standard Boolean operations (**Material Conditional**/**Implication**, **Conjunction**, **Disjunction**, **Negation** - for example, adding **NAND**).
+Generates Boolean, bivalent, classical, logic results from ***Deep Learning Linear Regression*** models (it doesn't use in-built programmatic, *native*, Boolean clauses or ***Automated Theorem Proving*** techniques). 
 
-> This mirrors research into how one would ***teach*** a computer logic ***rather than stipulate how logic works*** like we do within programming languages. Read more [here](backend/ml/README.md).
+Also, inferences are included that exceed the standard Boolean operations (**Material Conditional**/**Implication**, **Conjunction**, **Disjunction**, **Negation** - for example: **NAND**).
+
+> This mirrors research into how one might try to ***teach*** a computer logic ***rather than just stipulate how logic works*** like we do within programming languages. Read more [here](backend/ml/README.md).
 
 1. **Negation**
     * Supply sequences of `0,0` (`False`) or `1,1` (`True`)
