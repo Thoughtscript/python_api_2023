@@ -72,7 +72,7 @@ A test endpoint to verify that requests are getting through and the app is expos
 
 ### Logic API
 
-Generates Boolean, bivalent, classical, logic results from ***Deep Learning Linear Regression*** models (it doesn't use in-built programmatic, *native*, Boolean clauses or ***Automated Theorem Proving*** techniques). 
+Generates Boolean, bivalent, classical, logic results from ***Deep Learning Linear Regression*** models (it doesn't use in-built programmatic, native, Boolean clauses or ***Automated Theorem Proving*** techniques). 
 
 Also, inferences are included that exceed the standard Boolean operations (**Material Conditional**/**Implication**, **Conjunction**, **Disjunction**, **Negation** - for example: **NAND**).
 
