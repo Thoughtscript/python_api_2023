@@ -4,7 +4,7 @@ Very simple examples I've extended from some Coursera/classwork I did.
 
 These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra**. Again, we're striving to *teach* a computer logic here rather than using deductive or Boolean clauses within a programming language to enforce certain kinds of basic inferences (of course we're still using such a programming language under the hood LOL).
 
-> Some humans take a long time to pick up **Classical Logic** (and some never de). Our **Deep Learning** network will pick up 100% accurate deduction concepts in a few milliseconds. Be forewarned however that the models are fairly sensitive to the **Learning Rate**. Some will fail to generate a solution if the **Learning Rate** is above `2`, etc. 
+> Some humans take a long time to pick up **Classical Logic** (and indeed some never do). Interestingly, our **Deep Learning** network will pick up 100% accurate deduction concepts in a few milliseconds. Be forewarned however that the models are fairly sensitive to the **Learning Rate**. Some will fail to generate a solution if the **Learning Rate** is above `2`, etc. 
 
 1. Implication: set `learning_rate = .25` - added several additional data points for problematic entries (`1&0`):
 
