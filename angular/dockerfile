@@ -1,4 +1,4 @@
-FROM node
+FROM node:22.3.0
 
 RUN echo "Creating working dir and copying files"
 RUN mkdir /app
@@ -10,4 +10,4 @@ RUN npm i @angular/cli -g
 
 # --host must be set here to bind any local docker host ip to the specified port
 # the port number is set in angular.json under server.options.port otherwise it'll be random
-CMD [ "ng", "serve" , "-o", "--host", "0.0.0.0"]
+CMD ["ng", "serve" , "-o", "--host", "0.0.0.0"]
