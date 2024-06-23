@@ -8,14 +8,16 @@ Run the following from the root dir:
 docker-compose up
 ```
 
-That should spin up each subservice. (**NOTE:** the `backend` service will continually restart until the `mysql` service has fully initialized.) Otherwise you can launch each service individually by:
+That should spin up each subservice. (**NOTE:** the `backend` service will continually restart until the `mysql` service has fully initialized (and it may throw a bunch of connection errors loudly for about `15` seconds while doing so!) Also, **NOTE**: `MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password` is deprecated in `8.4` - for now I've pinned the version to `8.0` which is likely the closest to what I was using in early Spring 2024 - you may need to clean your local images and volumes via something like `docker system prune --volumes` since the Bitnami container may throw the following error message otherwise: `The designated data directory /bitnami/mysql/data/ is unusable.`) 
+
+Otherwise you can launch each service individually by:
 
 1. Commenting out everything in `docker-compose.yml` except for:
 
     ```yml
     services:
       mysql:
-       image: 'bitnami/mysql:latest'
+       image: 'bitnami/mysql:8.0'
       ports:
         - '3306:3306'
       environment:
@@ -27,8 +29,8 @@ That should spin up each subservice. (**NOTE:** the `backend` service will conti
     ```
 
     Then launching the MySQL subservice via `docker-compose-up`.
-1. From within `/angular` run `npm i && npm i angular/cli -g`, then `ng serve -o` to spin up the Angular frontend.
-1. From within `/backend` run:
+2. From within `/angular` run `npm i && npm i angular/cli -g`, then `ng serve -o` to spin up the Angular frontend.
+3. From within `/backend` run:
 
     ```bash
     cd ml 
@@ -43,7 +45,7 @@ That should spin up each subservice. (**NOTE:** the `backend` service will conti
 
    To generate the Machine Learning models.
 
-1. Lastly, to start the backend service - from within `/backend` run:
+4. Lastly, to start the backend service - from within `/backend` run:
 
     ```bash
     cd backend 
