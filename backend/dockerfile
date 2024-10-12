@@ -18,4 +18,4 @@ RUN apt-get update && apt-get install -y default-mysql-client default-libmysqlcl
 RUN cd server && python3 -m pip install -r requirements.txt
 # host and ports are set in server/main.py but they could be passed below instead
 # these are required to bind the ips and ports correctly
-CMD [ "python3", "server/main.py"]
+CMD [ "bash", "run.sh" ]
