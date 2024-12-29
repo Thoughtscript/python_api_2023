@@ -13,4 +13,6 @@ echo 'wait'
 echo "'''"
 echo 
 
+# If using Docker Compose Engine V2 uncomment:
+# docker compose up
 docker-compose up
