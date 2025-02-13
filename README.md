@@ -455,6 +455,96 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
     ]
     ``` 
 
+1. **Biconditional**
+    * "Two Directional Material Conditionals" ("Necessary and Sufficient") - Evaluates `True` if both sides are the same.
+    * Supply sequences of `0,1` (left side `False`, right side `True`), `1,1` (left side `True`, right side `True`), `1,0` (left side `True`, right side `False`), `0,0` (left side `False`, right side `False`).
+    * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
+        * `1,0` at index `i` will map to `false` at index `i`.
+    * Docker `POST http://localhost:5001/api/logic/biconditional?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1|0,0|1,1`
+    * Standalone `POST http://localhost:5000/api/logic/biconditional?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1|0,0|1,1`
+
+    Response:
+    ```JSON
+    [
+        [
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                1
+            ]
+        ],
+        [
+            [
+                true,
+                true,
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                true,
+                true
+            ]
+        ]
+    ]
+    ``` 
+
 ### DB API
 
 Supports RESTful CRUD (***CREATE***, ***READ***, ***UPDATE***, ***DELETE***) operations against a backing MySQL DB.

@@ -631,6 +631,112 @@
 					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ]\n    ],\n    [\n        [\n            false,\n            false,\n            true,\n            true,\n            false,\n            false,\n            true,\n            true,\n            false,\n            true,\n            true,\n            true\n        ]\n    ]\n]"
 				}
 			]
+		},
+		{
+			"name": "Biconditional",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"  pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([true, true, false, false, true, true, false, false, true, false, false, false, true, true])\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/logic/biconditional?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1|0,0|1,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"logic",
+						"biconditional"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1|0,0|1,1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Biconditional",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/biconditional?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1|0,0|1,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"biconditional"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1|0,0|1,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 06:14:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "626"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            1\n        ]\n    ],\n    [\n        [\n            true,\n            true,\n            false,\n            false,\n            true,\n            true,\n            false,\n            false,\n            true,\n            false,\n            false,\n            false,\n            true,\n            true\n        ]\n    ]\n]"
+				}
+			]
 		}
 	]
 }

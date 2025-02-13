@@ -21,6 +21,7 @@ CONJUNCTION_MODEL = helpers.loadModel('conjunction.npy')
 IMPLICATION_MODEL = helpers.loadModel('implication.npy')
 NAND_MODEL = helpers.loadModel('nand.npy')
 XOR_MODEL = helpers.loadModel('xor.npy')
+BICONDITIONAL_MODEL = helpers.loadModel('biconditional.npy')
 
 async def handleRequest(request, reject_unsame = False):
     data = request.args.get('test', '')
@@ -82,4 +83,11 @@ async def xor():
     input = await handleRequest(request)
     DATA = np.array(input)
     response = helpers.predict_ann(DATA.T, XOR_MODEL)
+    return [input, response.tolist()]
+
+@app.route("/api/logic/biconditional", methods=['POST'])
+async def biconditional():
+    input = await handleRequest(request)
+    DATA = np.array(input)
+    response = helpers.predict_ann(DATA.T, BICONDITIONAL_MODEL)
     return [input, response.tolist()]

@@ -2,9 +2,9 @@
 
 Very simple examples I've extended from some Coursera/classwork I did.
 
-These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra**. Again, we're striving to *teach* a computer logic here rather than using deductive or Boolean clauses within a programming language to enforce certain kinds of basic inferences (of course we're still using such a programming language under the hood LOL).
+These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra** (along with NAND, XOR, and Biconditional). Again, we're striving to *teach* a computer logic here rather than using deductive or Boolean clauses within a programming language to enforce certain kinds of basic inferences (of course we're still using such a programming language under the hood LOL). In philosophy we often take the Truth Functions as a given, here we define them through the power of curve fitting!
 
-> Some humans take a long time to pick up **Classical Logic** (and indeed some never do). Interestingly, our **Deep Learning** network will pick up 100% accurate deduction concepts in a few milliseconds. Be forewarned however that the models are fairly sensitive to the **Learning Rate**. Some will fail to generate a solution if the **Learning Rate** is above `2`, etc. 
+> Some humans take a long time to pick up **Classical Logic** (and indeed some never do). Interestingly, our **Deep Learning** network will pick up 100% accurate deduction concepts in a few milliseconds. (And now, all humans can embrace rationality through this AI!!!) Be forewarned however that the models are fairly sensitive to the **Learning Rate**. Some will fail to generate a solution if the **Learning Rate** is above `2`, etc. 
 
 1. Implication: set `learning_rate = .25` - added several additional data points for problematic entries (`1&0`):
 
@@ -524,6 +524,136 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
       [0 0]
       [1 0]
       [0 1]]
+      ```
+
+7. Biconditional: set `learning_rate = .155` - added several additional data points for problematic entries (`1&1`).
+   
+      ```bash
+      python3 ml-biconditional.py
+
+      Data entry 0&0 with label 1
+      Data entry 1&0 with label 0
+      Data entry 0&1 with label 0
+      Data entry 1&1 with label 1
+      Data entry 1&1 with label 1
+      Data entry 0&0 with label 1
+      Data entry 1&1 with label 1
+      Data entry 0&0 with label 1
+      Data entry 0&1 with label 0
+      Data entry 1&0 with label 0
+      Data entry 0&1 with label 0
+      Data entry 1&0 with label 0
+      Data entry 1&1 with label 1
+      Data entry 0&0 with label 1
+      Data entry 1&1 with label 1
+      Data entry 0&0 with label 1
+      Data entry 1&0 with label 0
+      Data entry 0&1 with label 0
+      Data entry 1&0 with label 0
+      Data entry 0&1 with label 0
+      Data entry 0&1 with label 0
+      Data entry 1&1 with label 1
+      Data entry 0&0 with label 1
+      Data entry 1&0 with label 0
+      [[0.5        0.57664062 0.48399922 0.59614792 0.59614792 0.5
+        0.59614792 0.5        0.48399922 0.57664062 0.48399922 0.57664062
+        0.59614792 0.5        0.59614792 0.5        0.57664062 0.48399922
+        0.57664062 0.48399922 0.48399922 0.59614792 0.5        0.57664062]]
+      Predict: [[False  True False  True  True False  True False False  True False  True
+         True False  True False  True False  True False False  True False  True]]
+      [[0.49979848 0.55149914 0.47337621 0.58020178 0.58020178 0.49979848
+        0.58020178 0.49979848 0.47337621 0.55149914 0.47337621 0.55149914
+        0.58020178 0.49979848 0.58020178 0.49979848 0.55149914 0.47337621
+        0.55149914 0.47337621 0.47337621 0.58020178 0.49979848 0.55149914]]
+      Predict: [[False  True False  True  True False  True False False  True False  True
+         True False  True False  True False  True False False  True False  True]]
+      [[0.49886731 0.52810336 0.46350145 0.56616088 0.56616088 0.49886731
+        0.56616088 0.49886731 0.46350145 0.52810336 0.46350145 0.52810336
+        0.56616088 0.49886731 0.56616088 0.49886731 0.52810336 0.46350145
+        0.52810336 0.46350145 0.46350145 0.56616088 0.49886731 0.52810336]]
+      Predict: [[False  True False  True  True False  True False False  True False  True
+         True False  True False  True False  True False False  True False  True]]
+      [[0.49835854 0.50717675 0.45539273 0.55485697 0.55485697 0.49835854
+        0.55485697 0.49835854 0.45539273 0.50717675 0.45539273 0.50717675
+        0.55485697 0.49835854 0.55485697 0.49835854 0.50717675 0.45539273
+        0.50717675 0.45539273 0.45539273 0.55485697 0.49835854 0.50717675]]
+      Predict: [[False  True False  True  True False  True False False  True False  True
+         True False  True False  True False  True False False  True False  True]]
+      [[0.49818683 0.48786475 0.44870965 0.54580819 0.54580819 0.49818683
+        0.54580819 0.49818683 0.44870965 0.48786475 0.44870965 0.48786475
+        0.54580819 0.49818683 0.54580819 0.49818683 0.48786475 0.44870965
+        0.48786475 0.44870965 0.44870965 0.54580819 0.49818683 0.48786475]]
+      Predict: [[False False False  True  True False  True False False False False False
+         True False  True False False False False False False  True False False]]
+      [[0.49830777 0.47071655 0.4432243  0.53870289 0.53870289 0.49830777
+        0.53870289 0.49830777 0.4432243  0.47071655 0.4432243  0.47071655
+        0.53870289 0.49830777 0.53870289 0.49830777 0.47071655 0.4432243
+        0.47071655 0.4432243  0.4432243  0.53870289 0.49830777 0.47071655]]
+      Predict: [[False False False  True  True False  True False False False False False
+         True False  True False False False False False False  True False False]]
+      [[0.49867454 0.4554767  0.43872613 0.53322105 0.53322105 0.49867454
+        0.53322105 0.49867454 0.43872613 0.4554767  0.43872613 0.4554767
+        0.53322105 0.49867454 0.53322105 0.49867454 0.4554767  0.43872613
+        0.4554767  0.43872613 0.43872613 0.53322105 0.49867454 0.4554767 ]]
+      Predict: [[False False False  True  True False  True False False False False False
+         True False  True False False False False False False  True False False]]
+      [[0.49924584 0.44190811 0.43503765 0.52908306 0.52908306 0.49924584
+        0.52908306 0.49924584 0.43503765 0.44190811 0.43503765 0.44190811
+        0.52908306 0.49924584 0.52908306 0.49924584 0.44190811 0.43503765
+        0.44190811 0.43503765 0.43503765 0.52908306 0.49924584 0.44190811]]
+      Predict: [[False False False  True  True False  True False False False False False
+         True False  True False False False False False False  True False False]]
+      [[0.49998579 0.42979825 0.43201067 0.52604912 0.52604912 0.49998579
+        0.52604912 0.49998579 0.43201067 0.42979825 0.43201067 0.42979825
+        0.52604912 0.49998579 0.52604912 0.49998579 0.42979825 0.43201067
+        0.42979825 0.43201067 0.43201067 0.52604912 0.49998579 0.42979825]]
+      Predict: [[False False False  True  True False  True False False False False False
+         True False  True False False False False False False  True False False]]
+      [[0.50086359 0.41896073 0.42952233 0.52391593 0.52391593 0.50086359
+        0.52391593 0.50086359 0.42952233 0.41896073 0.42952233 0.41896073
+        0.52391593 0.50086359 0.52391593 0.50086359 0.41896073 0.42952233
+        0.41896073 0.42952233 0.42952233 0.52391593 0.50086359 0.41896073]]
+      Predict: [[ True False False  True  True  True  True  True False False False False
+         True  True  True  True False False False False False  True  True False]]
+      ANN arrived at conclusion: [[ True False False  True  True  True  True  True False False False False
+         True  True  True  True False False False False False  True  True False]] after 9 iterations
+      Test set 1: [[ True  True False False]] from [[1 1]
+       [0 0]
+       [1 0]
+       [0 1]]
+      Test set 2: [[False  True  True False]] from [[0 1]
+       [1 1]
+       [1 1]
+       [0 1]]
+      Test set 3: [[ True  True  True  True]] from [[1 1]
+       [1 1]
+       [1 1]
+       [1 1]]
+      Test set 4: [[False False False False]] from [[0 1]
+       [0 1]
+       [0 1]
+       [0 1]]
+      Test set 5: [[ True  True  True  True]] from [[0 0]
+       [0 0]
+       [0 0]
+       [0 0]]
+      Test set 6: [[ True  True False False  True  True False False  True  True False False
+         True  True False False]] from [[1 1]
+       [0 0]
+       [1 0]
+       [0 1]
+       [1 1]
+       [0 0]
+       [1 0]
+       [0 1]
+       [1 1]
+       [0 0]
+       [1 0]
+       [0 1]
+       [1 1]
+       [0 0]
+       [1 0]
+       [0 1]]
       ```
 
 ## An Alternative Approach
