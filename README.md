@@ -8,6 +8,8 @@ This example is actually three examples in one (sorry, crunched for time!):
 2. A suite of [Machine Learning models](backend/ml/README.md) built to *teach* a computer how to use logic (*Statistically*, through Linear Regression rather than to stipulate Boolean Algebra as such through *Imperative* programming languages) whilst adding XOR and NAND.
 3. To expose those Machine Learning models through an API accessible only through [Postman](postman/Python%20ML%20API.postman_collection.json) since examples about how to do this easily seem lacking.
 
+## Use
+
 Run the following from the root dir:
 
 ```bash
@@ -17,11 +19,7 @@ docker-compose up
 docker compose up
 ```
 
-That should spin up each subservice.
-
-> **NOTE**: `MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password` is deprecated in `8.4` - for now I've pinned the version to `8.0` which is likely the closest to what I was using in early Spring 2024 - you may need to clean your local images and volumes via something like `docker system prune --volumes` since the Bitnami container may throw the following error message otherwise: `The designated data directory /bitnami/mysql/data/ is unusable.`) 
-
-Otherwise, you can launch each service individually by:
+That should spin up each subservice. Otherwise, you can launch each service individually by:
 
 1. Commenting out everything in `docker-compose.yml` except for:
 
@@ -67,6 +65,10 @@ Otherwise, you can launch each service individually by:
     ```
 
 > Generally speaking, the necessary config, settings, and commands are available within [docker-compose.yml](docker-compose.yml), backend [dockerfile](backend/dockerfile), frontend [dockerfile](angular/dockerfile), [angular.json](angular/angular.json), and [main.py](backend/server/main.py), respectively. So, please make recourse to those if you encounter problems.
+
+## Notes
+
+> **NOTE**: `MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password` is deprecated in `8.4` - for now I've pinned the version to `8.0` which is likely the closest to what I was using in early Spring 2024 - you may need to clean your local images and volumes via something like `docker system prune --volumes` since the Bitnami container may throw the following error message otherwise: `The designated data directory /bitnami/mysql/data/ is unusable.`) 
 
 ## Angular Frontend
 
