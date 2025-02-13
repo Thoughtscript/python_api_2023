@@ -51,6 +51,7 @@ That should spin up each subservice. Otherwise, you can launch each service indi
     python3 ml-negation.py
     python3 ml-nand.py
     python3 ml-xor.py
+    python3 ml-biconditional.py
     ```
 
    To generate the Machine Learning models.
