@@ -2,7 +2,7 @@
 
 Very simple examples I've extended from some Coursera/classwork I did.
 
-These should cover the basic **Truth-Tables** for [Zero Order, Classical / Boolean Algebra](https://www.thoughtscript.io/papers/000000000001) (along with NAND, XOR, and Biconditional). Again, we're striving to *teach* a computer logic here rather than using deductive or Boolean clauses within a programming language to enforce certain kinds of basic inferences (of course we're still using such a programming language under the hood LOL). In philosophy we often take the Truth Functions as a given, here we define them through the power of curve fitting!
+These should cover the basic **Truth-Tables** for [Zero Order, Classical / Boolean Algebra](https://www.thoughtscript.io/papers/000000000001) (along with NAND, XOR, Biconditional, and [others](http://finitegeometry.org/sc/16/logic.html)). Again, we're striving to *teach* a computer logic here rather than using deductive or Boolean clauses within a programming language to enforce certain kinds of basic inferences (of course we're still using such a programming language under the hood LOL). In philosophy we often take the Truth Functions as a given, here we define them through the power of curve fitting!
 
 > Some humans take a long time to pick up **Classical Logic** (and indeed some never do). Interestingly, our **Deep Learning** network will pick up 100% accurate deduction concepts in a few milliseconds. (And now, all humans can embrace rationality through this AI!!!) Be forewarned however that the models are fairly sensitive to the **Learning Rate**. Some will fail to generate a solution if the **Learning Rate** is above `2`, etc. 
 
@@ -567,6 +567,58 @@ These should cover the basic **Truth-Tables** for [Zero Order, Classical / Boole
       Triviality-F test set 6: [[False False False False False False]] from [[1 0] [1 0] [1 0] [1 0] [1 1] [0 0]] passed: True
       ```
 
+10. NOR: set `learning_rate = 2.4`
+
+      ```bash
+      python3 ml-nor.py
+
+      Data entry 1&0 with label 0
+      Data entry 1&0 with label 0
+      Data entry 0&0 with label 1
+      Data entry 1&1 with label 0
+      Data entry 0&0 with label 1
+      [[0.63767246 0.63767246 0.5        0.59235286 0.5       ]]
+      Predict: [[ True  True False  True False]]
+      [[0.13379728 0.13379728 0.40050319 0.28279974 0.40050319]]
+      Predict: [[False False False False False]]
+      [[0.18205432 0.18205432 0.41972074 0.31928818 0.41972074]]
+      Predict: [[False False False False False]]
+      [[0.15330637 0.15330637 0.37836607 0.20853945 0.37836607]]
+      Predict: [[False False False False False]]
+      [[0.15826515 0.15826515 0.37689277 0.21968563 0.37689277]]
+      Predict: [[False False False False False]]
+      [[0.19820513 0.19820513 0.40806065 0.27638845 0.40806065]]
+      Predict: [[False False False False False]]
+      [[0.22803277 0.22803277 0.43573898 0.32105153 0.43573898]]
+      Predict: [[False False False False False]]
+      [[0.26150474 0.26150474 0.45362134 0.37600907 0.45362134]]
+      Predict: [[False False False False False]]
+      [[0.33549242 0.33549242 0.46249394 0.49711446 0.46249394]]
+      Predict: [[False False False False False]]
+      [[0.51451808 0.51451808 0.45434288 0.71667674 0.45434288]]
+      Predict: [[ True  True False  True False]]
+      [[0.58157318 0.58157318 0.37119372 0.72359393 0.37119372]]
+      Predict: [[ True  True False  True False]]
+      [[0.55432379 0.55432379 0.33505318 0.6593453  0.33505318]]
+      Predict: [[ True  True False  True False]]
+      [[0.66087367 0.66087367 0.67680781 0.61066072 0.67680781]]
+      Predict: [[ True  True  True  True  True]]
+      [[0.6061563  0.6061563  0.72188384 0.45829686 0.72188384]]
+      Predict: [[ True  True  True False  True]]
+      [[0.55243901 0.55243901 0.69336351 0.36689561 0.69336351]]
+      Predict: [[ True  True  True False  True]]
+      [[0.44314789 0.44314789 0.61089856 0.31827551 0.61089856]]
+      Predict: [[False False  True False  True]]
+      ANN arrived at conclusion: [[False False  True False  True]] after 15 iterations
+      NOR test set 1: [[False  True False False]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      NOR test set 2: [[False False False False]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      NOR test set 3: [[False False False False]] from [[1 1] [0 1] [1 0] [1 0]] passed: True
+      NOR test set 4: [[False False False  True False  True]] from [[0 1] [1 0] [1 1] [0 0] [1 1] [0 0]] passed: True
+      NOR test set 5: [[ True False False False]] from [[0 0] [1 1] [0 1] [1 0]] passed: True
+      NOR test set 6: [[False False False False False  True]] from [[1 0] [1 0] [1 0] [1 0] [1 1] [0 0]] passed: True
+      NOR test set 7: [[ True  True False False False  True]] from [[0 0] [0 0] [1 0] [0 1] [1 1] [0 0]] passed: True
+      ```
+
 ## Truth Tables
 
 For reference:
@@ -650,6 +702,15 @@ For reference:
   | F | F | F |
   | F | T | F |
 
+* NOR
+
+  | P | Q | P NOR Q |
+  | - | - | ------|
+  | T | T | F |
+  | T | F | F |
+  | F | F | T |
+  | F | T | F |
+
 ## An Alternative Approach
 
 Before I got the **Learning Rates** correct, I was thinking it might be beyond my current skillset to *teach* an arbitrary machine how to do Boolean Algebra. Here's an alternative path/signpost, since **Negation** and **Conjunction** are 100% accurate one can interdefine the other two:
@@ -666,3 +727,4 @@ Before I got the **Learning Rates** correct, I was thinking it might be beyond m
 1. Cool paper on how to implement **Logic Learning Networks**: https://arxiv.org/pdf/1904.01554.pdf.
 2. https://www.thoughtscript.io/papers/000000000001
 3. https://dimap.ufrn.br/~jmarcos/papers/JM/01-CM-ECNSQL.pdf
+4. http://finitegeometry.org/sc/16/logic.html

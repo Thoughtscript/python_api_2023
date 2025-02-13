@@ -12,7 +12,7 @@ RUN cd ml && python3 -m pip install -r requirements.txt
 # run the machine learning scripts to save off the annModels within the image
 # the logs for these scripts will now show in Docker Desktop
 RUN cd ml && python3 ml-conjunction.py && python3 ml-disjunction.py && python3 ml-implication.py && python3 ml-negation.py 
-RUN cd ml && python3 ml-nand.py && python3 ml-xor.py && python3 ml-biconditional.py
+RUN cd ml && python3 ml-nand.py && python3 ml-xor.py && python3 ml-biconditional.py && python3 ml-nor.py
 RUN cd ml && python3 ml-triviality-f.py && python3 ml-triviality-t.py
 
 # this is apparently a required dependency of SQLAlchemy

@@ -24,6 +24,7 @@ XOR_MODEL = helpers.loadModel('xor.npy')
 BICONDITIONAL_MODEL = helpers.loadModel('biconditional.npy')
 TRIV_T_MODEL = helpers.loadModel('triviality-t.npy')
 TRIV_F_MODEL = helpers.loadModel('triviality-f.npy')
+NOR_MODEL = helpers.loadModel('nor.npy')
 
 async def handleRequest(request, reject_unsame = False):
     data = request.args.get('test', '')
@@ -106,4 +107,11 @@ async def trivialityf():
     input = await handleRequest(request)
     DATA = np.array(input)
     response = helpers.predict_ann(DATA.T, TRIV_F_MODEL)
+    return [input, response.tolist()]
+
+@app.route("/api/logic/nor", methods=['POST'])
+async def nor():
+    input = await handleRequest(request)
+    DATA = np.array(input)
+    response = helpers.predict_ann(DATA.T, NOR_MODEL)
     return [input, response.tolist()]
