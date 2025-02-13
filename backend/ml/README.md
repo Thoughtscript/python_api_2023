@@ -432,7 +432,7 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
        [0 1]]
       ```
 
-6. XOR: set `1.155`
+6. XOR: set `learning_rate = 1.155`
    
       ```bash
       python3 ml-xor.py
@@ -450,7 +450,6 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
       Data entry 1&0 with label 1
       Data entry 0&0 with label 0
       Data entry 0&1 with label 1
-
       [[0.52160566 0.44295413 0.54657634 0.5        0.54657634 0.52160566
         0.44295413 0.54657634 0.44295413 0.5        0.52160566 0.5
         0.44295413]]
@@ -488,7 +487,6 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
         True]]
       ANN arrived at conclusion: [[ True  True False False False  True  True False  True False  True False
          True]] after 6 iterations
-
       Test set 1: [[False False True True]] from [[1 1]
       [0 0]
       [1 0]
