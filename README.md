@@ -6,9 +6,9 @@ This example is actually three examples in one (sorry, crunched for time!):
 
 1. A basic CRUD REST API with backing database and minimum viable User Interface built in Angular.
 2. A suite of [Machine Learning models](backend/ml/README.md) built to *teach* a computer how to use (Classical, [Zero Order](https://www.thoughtscript.io/papers/000000000001)) logic (*Statistically*, through Linear Regression rather than to stipulate Boolean Algebra as such through *Imperative* programming languages) whilst adding XOR, NAND, and Biconditional. Philosophically this aligns with [Putnam's](https://philpapers.org/rec/PUTILE) approach.
-    * Unit Tests are supplied in the Python scripts.
+    * Unit Tests are supplied in the [Python scripts](backend/ml/README.md).
 3. To expose those Machine Learning models through an API accessible only through [Postman](postman/Python%20ML%20API.postman_collection.json) since examples about how to do this easily seem lacking.
-    * Integration Tests are defined in the Postman Collection.
+    * Integration Tests are defined in the [Postman Collection](postman/Python%20ML%20API.postman_collection.json).
 
 ## Use
 
@@ -671,7 +671,7 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
     ]
     ``` 
 
-1. **NOR***
+1. **NOR**
     * "Neither Nor" - Evaluates `True` only if neither disjunct is `True`.
     * Supply sequences of `0,1` (left disjunct `False`, right disjunct `True`), `1,1` (left disjunct `True`, right disjunct `True`), `1,0` (left disjunct `True`, right disjunct `False`), `0,0` (left disjunct `False`, right disjunct `False`).
     * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
