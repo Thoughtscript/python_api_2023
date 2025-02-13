@@ -2,6 +2,12 @@
 
 [![](https://img.shields.io/badge/Python-3.8.2-yellow.svg)](https://www.python.org/downloads/) [![](https://img.shields.io/badge/Angular-v15-1976d2.svg)](https://angular.io/) [![](https://img.shields.io/badge/Docker-blue.svg)](https://www.docker.com/) [![](https://img.shields.io/badge/Bitnami-MySQL-red.svg)](https://hub.docker.com/r/bitnami/mysql)
 
+This example is actually three examples in one:
+
+1. A basic CRUD REST API with backing database and minimum viable User Interface built in Angular.
+2. A suite of [Machine Learning models](backend/ml/README.md) built to *teach* a computer how to use logic (*Statistically*, through Linear Regression rather than to stipulate Boolean Algebra as such through *Imperative* programming languages) whilst adding XOR and NAND.
+3. To expose those Machine Learning models through an API accessible only through [Postman](postman/Python%20ML%20API.postman_collection.json) since examples about how to do this easily seem lacking.
+
 Run the following from the root dir:
 
 ```bash
