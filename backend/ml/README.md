@@ -2,7 +2,7 @@
 
 Very simple examples I've extended from some Coursera/classwork I did.
 
-These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra** (along with NAND, XOR, and Biconditional). Again, we're striving to *teach* a computer logic here rather than using deductive or Boolean clauses within a programming language to enforce certain kinds of basic inferences (of course we're still using such a programming language under the hood LOL). In philosophy we often take the Truth Functions as a given, here we define them through the power of curve fitting!
+These should cover the basic **Truth-Tables** for [Zero Order, Classical / Boolean Algebra](https://www.thoughtscript.io/papers/000000000001) (along with NAND, XOR, and Biconditional). Again, we're striving to *teach* a computer logic here rather than using deductive or Boolean clauses within a programming language to enforce certain kinds of basic inferences (of course we're still using such a programming language under the hood LOL). In philosophy we often take the Truth Functions as a given, here we define them through the power of curve fitting!
 
 > Some humans take a long time to pick up **Classical Logic** (and indeed some never do). Interestingly, our **Deep Learning** network will pick up 100% accurate deduction concepts in a few milliseconds. (And now, all humans can embrace rationality through this AI!!!) Be forewarned however that the models are fairly sensitive to the **Learning Rate**. Some will fail to generate a solution if the **Learning Rate** is above `2`, etc. 
 
@@ -31,30 +31,12 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
       [[0.49474159 0.49474159 0.52933471 0.52743709 0.52006188]]
       Predict: [[False False  True  True  True]]
       ANN arrived at conclusion: [[False False  True  True  True]] after 6 iterations
-      Test set 1: [[ True  True False  True]] from [[1 1]
-       [0 0]
-       [1 0]
-       [0 1]]
-      Test set 2: [[ True  True  True  True]] from [[0 1]
-       [1 1]
-       [1 1]
-       [0 1]]
-      Test set 3: [[ True  True False False]] from [[1 1]
-       [0 1]
-       [1 0]
-       [1 0]]
-      Test set 4: [[ True False  True  True]] from [[0 1]
-       [1 0]
-       [1 1]
-       [0 0]]
-      Test set 5: [[ True  True  True False]] from [[0 0]
-       [1 1]
-       [0 1]
-       [1 0]]
-      Test set 6: [[False False False False]] from [[1 0]
-       [1 0]
-       [1 0]
-       [1 0]]
+      Implication test set 1: [[ True  True False  True]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      Implication test set 2: [[ True  True  True  True]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      Implication test set 3: [[ True  True False False]] from [[1 1] [0 1] [1 0] [1 0]] passed: True
+      Implication test set 4: [[ True False  True  True  True  True]] from [[0 1] [1 0] [1 1] [0 0] [1 1] [0 0]] passed: True
+      Implication test set 5: [[ True  True  True False]] from [[0 0] [1 1] [0 1] [1 0]] passed: True
+      Implication test set 6: [[False False False False  True  True]] from [[1 0] [1 0] [1 0] [1 0] [1 1] [0 0]] passed: True
       ```
 
 2. Conjunction: set `learning_rate = 1.75`. 
@@ -82,22 +64,10 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
       [[0.22596828 0.51468278 0.31328059 0.29299712]]
       Predict: [[False  True False False]]
       ANN arrived at conclusion: [[False  True False False]] after 6 iterations
-      Test set 1: [[ True False False False]] from [[1 1]
-       [0 0]
-       [1 0]
-       [0 1]]
-      Test set 2: [[False  True  True False]] from [[0 1]
-       [1 1]
-       [1 1]
-       [0 1]]
-      Test set 3: [[ True  True  True  True]] from [[1 1]
-       [1 1]
-       [1 1]
-       [1 1]]
-      Test set 4: [[False False False False]] from [[0 1]
-       [0 1]
-       [0 1]
-       [0 1]]
+      Conjunction test set 1: [[ True False False False]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      Conjunction test set 2: [[False  True  True False]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      Conjunction test set 3: [[ True  True  True  True]] from [[1 1] [1 1] [1 1] [1 1]] passed: True
+      Conjunction test set 4: [[False False False False]] from [[0 1] [0 1] [0 1] [0 1]] passed: True
       ```
 
 3. Disjunction: set `learning_rate = 1.15` - added several additional data points for problematic entries (`0&0`).
@@ -280,26 +250,12 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
       [[0.5272198  0.54470096 0.52940883 0.44128697 0.44128697 0.44128697]]
       Predict: [[ True  True  True False False False]]
       ANN arrived at conclusion: [[ True  True  True False False False]] after 83 iterations
-      Test set 1: [[ True False  True  True]] from [[1 1]
-       [0 0]
-       [1 0]
-       [0 1]]
-      Test set 2: [[ True  True  True  True]] from [[0 1]
-       [1 1]
-       [1 1]
-       [0 1]]
-      Test set 3: [[ True  True  True  True]] from [[1 1]
-       [1 1]
-       [1 1]
-       [1 1]]
-      Test set 4: [[ True  True  True  True]] from [[0 1]
-       [0 1]
-       [0 1]
-       [0 1]]
-      Test set 5: [[False False False False]] from [[0 0]
-       [0 0]
-       [0 0]
-       [0 0]]
+      Disjunction test set 1: [[ True False  True  True]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      Disjunction test set 2: [[ True  True  True  True]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      Disjunction test set 3: [[ True  True  True  True]] from [[1 1] [1 1] [1 1] [1 1]] passed: True
+      Disjunction test set 4: [[ True  True  True  True]] from [[0 1] [0 1] [0 1] [0 1]] passed: True
+      Disjunction test set 5: [[False False False False]] from [[0 0] [0 0] [0 0] [0 0]] passed: True
+      Disjunction test set 6: [[ True False  True  True  True False  True  True]] from [[1 1] [0 0] [1 0] [0 1] [1 1] [0 0] [1 0] [0 1]] passed: True
       ```
 
 4. Negation: set `learning_rate = 1.45`.
@@ -340,20 +296,10 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
       [[0.70974277 0.48345124]]
       Predict: [[ True False]]
       ANN arrived at conclusion: [[ True False]] after 14 iterations
-      Test set 1: [[ True False]] from [[0 0]
-       [1 1]]
-      Test set 2: [[ True False  True False]] from [[0 0]
-       [1 1]
-       [0 0]
-       [1 1]]
-      Test set 3: [[False False False False]] from [[1 1]
-       [1 1]
-       [1 1]
-       [1 1]]
-      Test set 4: [[ True  True  True  True]] from [[0 0]
-       [0 0]
-       [0 0]
-       [0 0]]
+      Negation test set 1: [[ True False]] from [[0 0] [1 1]] passed: True
+      Negation test set 2: [[ True False  True False]] from [[0 0] [1 1] [0 0] [1 1]] passed: True
+      Negation test set 3: [[False False False False]] from [[1 1] [1 1] [1 1] [1 1]] passed: True
+      Negation test set 4: [[ True  True  True  True]] from [[0 0] [0 0] [0 0] [0 0]] passed: True
       ```
 
       > Note that `False` and `True` are modeled as: `[0, 0]` and `[1,1]`, respectively.
@@ -393,43 +339,12 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
       [[0.50144781 0.66561167 0.45783992 0.62616717 0.45783992]]
       Predict: [[ True  True False  True False]]
       ANN arrived at conclusion: [[ True  True False  True False]] after 11 iterations
-      Test set 1: [[False  True  True  True]] from [[1 1]
-       [0 0]
-       [1 0]
-       [0 1]]
-      Test set 2: [[ True False False  True]] from [[0 1]
-       [1 1]
-       [1 1]
-       [0 1]]
-      Test set 3: [[False False False False]] from [[1 1]
-       [1 1]
-       [1 1]
-       [1 1]]
-      Test set 4: [[ True  True  True  True]] from [[0 1]
-      [0 1]
-       [0 1]
-       [0 1]]
-      Test set 5: [[ True  True  True  True]] from [[0 0]
-       [0 0]
-       [0 0]
-       [0 0]]
-      Test set 6: [[False  True  True  True False  True  True  True False  True  True  True
-      False  True  True  True]] from [[1 1]
-       [0 0]
-       [1 0]
-       [0 1]
-       [1 1]
-       [0 0]
-       [1 0]
-       [0 1]
-       [1 1]
-       [0 0]
-       [1 0]
-       [0 1]
-       [1 1]
-       [0 0]
-       [1 0]
-       [0 1]]
+      NAND test set 1: [[False  True  True  True]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      NAND test set 2: [[ True False False  True]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      NAND test set 3: [[False False False False]] from [[1 1] [1 1] [1 1] [1 1]] passed: True
+      NAND test set 4: [[ True  True  True  True]] from [[0 1] [0 1] [0 1] [0 1]] passed: True
+      NAND test set 5: [[ True  True  True  True]] from [[0 0] [0 0] [0 0] [0 0]] passed: True
+      NAND test set 6: [[False  True  True  True False  True  True  True]] from [[1 1] [0 0] [1 0] [0 1] [1 1] [0 0] [1 0] [0 1]] passed: True
       ```
 
 6. XOR: set `learning_rate = 1.155`
@@ -487,43 +402,12 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
         True]]
       ANN arrived at conclusion: [[ True  True False False False  True  True False  True False  True False
          True]] after 6 iterations
-      Test set 1: [[False False True True]] from [[1 1]
-      [0 0]
-      [1 0]
-      [0 1]]
-      Test set 2: [[ True False False True]] from [[0 1]
-      [1 1]
-      [1 1]
-      [0 1]]
-      Test set 3: [[False False False False]] from [[1 1]
-      [1 1]
-      [1 1]
-      [1 1]]
-      Test set 4: [[ True True True True]] from [[0 1]
-      [0 1]
-      [0 1]
-      [0 1]]
-      Test set 5: [[False False False False]] from [[0 0]
-      [0 0]
-      [0 0]
-      [0 0]]
-      Test set 6: [[False False True True False False True True False False True True
-      False False True True]] from [[1 1]
-      [0 0]
-      [1 0]
-      [0 1]
-      [1 1]
-      [0 0]
-      [1 0]
-      [0 1]
-      [1 1]
-      [0 0]
-      [1 0]
-      [0 1]
-      [1 1]
-      [0 0]
-      [1 0]
-      [0 1]]
+      XOR test set 1: [[False False  True  True]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      XOR test set 2: [[ True False False  True]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      XOR test set 3: [[False False False False]] from [[1 1] [1 1] [1 1] [1 1]] passed: True
+      XOR test set 4: [[ True  True  True  True]] from [[0 1] [0 1] [0 1] [0 1]] passed: True
+      XOR test set 5: [[False False False False]] from [[0 0] [0 0] [0 0] [0 0]] passed: True
+      XOR test set 6: [[False False  True  True False False  True  True]] from [[1 1] [0 0] [1 0] [0 1] [1 1] [0 0] [1 0] [0 1]] passed: True
       ```
 
 7. Biconditional: set `learning_rate = .155` - added several additional data points for problematic entries (`1&1`).
@@ -617,44 +501,154 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
          True  True  True  True False False False False False  True  True False]]
       ANN arrived at conclusion: [[ True False False  True  True  True  True  True False False False False
          True  True  True  True False False False False False  True  True False]] after 9 iterations
-      Test set 1: [[ True  True False False]] from [[1 1]
-       [0 0]
-       [1 0]
-       [0 1]]
-      Test set 2: [[False  True  True False]] from [[0 1]
-       [1 1]
-       [1 1]
-       [0 1]]
-      Test set 3: [[ True  True  True  True]] from [[1 1]
-       [1 1]
-       [1 1]
-       [1 1]]
-      Test set 4: [[False False False False]] from [[0 1]
-       [0 1]
-       [0 1]
-       [0 1]]
-      Test set 5: [[ True  True  True  True]] from [[0 0]
-       [0 0]
-       [0 0]
-       [0 0]]
-      Test set 6: [[ True  True False False  True  True False False  True  True False False
-         True  True False False]] from [[1 1]
-       [0 0]
-       [1 0]
-       [0 1]
-       [1 1]
-       [0 0]
-       [1 0]
-       [0 1]
-       [1 1]
-       [0 0]
-       [1 0]
-       [0 1]
-       [1 1]
-       [0 0]
-       [1 0]
-       [0 1]]
+      Biconditional test set 1: [[ True  True False False]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      Biconditional test set 2: [[False  True  True False]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      Biconditional test set 3: [[ True  True  True  True]] from [[1 1] [1 1] [1 1] [1 1]] passed: True
+      Biconditional test set 4: [[False False False False]] from [[0 1] [0 1] [0 1] [0 1]] passed: True
+      Biconditional test set 5: [[ True  True  True  True]] from [[0 0] [0 0] [0 0] [0 0]] passed: True
+      Biconditional test set 6: [[ True  True False False  True  True False False]] from [[1 1] [0 0] [1 0] [0 1] [1 1] [0 0] [1 0] [0 1]] passed: True
       ```
+
+8. Triviality-T: set `learning_rate = .15`
+
+      ```bash
+      python3 ml-triviality-t.py 
+
+      Data entry 1&0 with label 1
+      Data entry 0&0 with label 1
+      Data entry 1&1 with label 1
+      Data entry 0&1 with label 1
+      [[0.34518138 0.5        0.35383809 0.5       ]]
+      Predict: [[False False False False]]
+      [[0.36283461 0.50922176 0.35943364 0.52155832]]
+      Predict: [[False  True False  True]]
+      [[0.38045298 0.51578037 0.36528974 0.54253382]]
+      Predict: [[False  True False  True]]
+      [[0.40313672 0.52481835 0.37638496 0.56288901]]
+      Predict: [[False  True False  True]]
+      [[0.4307621  0.53634163 0.39274792 0.58245856]]
+      Predict: [[False  True False  True]]
+      [[0.46277696 0.55014539 0.41407897 0.6010969 ]]
+      Predict: [[False  True False  True]]
+      [[0.4981976  0.5658394  0.43972977 0.61868818]]
+      Predict: [[False  True False  True]]
+      [[0.53570698 0.5829037  0.46873959 0.63515393]]
+      Predict: [[ True  True False  True]]
+      [[0.573845   0.60076352 0.49993984 0.64938648]]
+      Predict: [[ True  True False  True]]
+      [[0.6105035  0.61809841 0.5305006  0.65829681]]
+      Predict: [[ True  True  True  True]]
+      ANN arrived at conclusion: [[ True  True  True  True]] after 9 iterations
+      Triviality-T test set 1: [[ True  True  True  True]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      Triviality-T test set 2: [[ True  True  True  True]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      Triviality-T test set 3: [[ True  True  True  True]] from [[1 1] [0 1] [1 0] [1 0]] passed: True
+      Triviality-T test set 4: [[ True  True  True  True  True  True]] from [[0 1] [1 0] [1 1] [0 0] [1 1] [0 0]] passed: True
+      Triviality-T test set 5: [[ True  True  True  True]] from [[0 0] [1 1] [0 1] [1 0]] passed: True
+      Triviality-T test set 6: [[ True  True  True  True  True  True]] from [[1 0] [1 0] [1 0] [1 0] [1 1] [0 0]] passed: True
+      ```
+
+9.  Triviality-F: set `learning_rate = .15`
+
+      ```bash
+      python3 python3 ml-triviality-f.py 
+
+      Data entry 1&0 with label 0
+      Data entry 0&0 with label 0
+      Data entry 1&1 with label 0
+      Data entry 0&1 with label 0
+      [[0.34518138 0.5        0.35383809 0.5       ]]
+      Predict: [[False False False False]]
+      ANN arrived at conclusion: [[False False False False]] after 0 iterations
+      Triviality-F test set 1: [[False False False False]] from [[1 1] [0 0] [1 0] [0 1]] passed: True
+      Triviality-F test set 2: [[False False False False]] from [[0 1] [1 1] [1 1] [0 1]] passed: True
+      Triviality-F test set 3: [[False False False False]] from [[1 1] [0 1] [1 0] [1 0]] passed: True
+      Triviality-F test set 4: [[False False False False False False]] from [[0 1] [1 0] [1 1] [0 0] [1 1] [0 0]] passed: True
+      Triviality-F test set 5: [[False False False False]] from [[0 0] [1 1] [0 1] [1 0]] passed: True
+      Triviality-F test set 6: [[False False False False False False]] from [[1 0] [1 0] [1 0] [1 0] [1 1] [0 0]] passed: True
+      ```
+
+## Truth Tables
+
+For reference:
+
+* Implication
+
+  | P | Q | P → Q |
+  | - | - | ------|
+  | T | T | T |
+  | T | F | F |
+  | F | F | T |
+  | F | T | T | 
+
+* Conjunction
+
+  | P | Q | P ∧ Q |
+  | - | - | ------|
+  | T | T | T |
+  | T | F | F |
+  | F | F | F |
+  | F | T | F |
+
+* Disjunction
+
+  | P | Q | P ∨ Q |
+  | - | - | ------|
+  | T | T | T |
+  | T | F | T |
+  | F | F | F |
+  | F | T | T |
+
+* Negation
+
+  | P | ¬P |
+  | - | - |
+  | F | T |
+  | T | F |
+
+* NAND
+
+  | P | Q | P NAND Q |
+  | - | - | ------|
+  | T | T | F |
+  | T | F | T |
+  | F | F | T |
+  | F | T | T |
+
+* XOR
+
+  | P | Q | P XOR Q |
+  | - | - | ------|
+  | T | T | F |
+  | T | F | T |
+  | F | F | F |
+  | F | T | T |
+
+* Biconditional
+
+  | P | Q | P ↔ Q |
+  | - | - | ------|
+  | T | T | T |
+  | T | F | F |
+  | F | F | T |
+  | F | T | F |
+
+* TRIVIALITY-T
+
+  | P | Q | P TRIV-T Q |
+  | - | - | ------|
+  | T | T | T |
+  | T | F | T |
+  | F | F | T |
+  | F | T | T |
+
+* TRIVIALITY-F
+
+  | P | Q | P TRIV-F Q |
+  | - | - | ------|
+  | T | T | F |
+  | T | F | F |
+  | F | F | F |
+  | F | T | F |
 
 ## An Alternative Approach
 
@@ -670,3 +664,5 @@ Before I got the **Learning Rates** correct, I was thinking it might be beyond m
 ## Academic Work
 
 1. Cool paper on how to implement **Logic Learning Networks**: https://arxiv.org/pdf/1904.01554.pdf.
+2. https://www.thoughtscript.io/papers/000000000001
+3. https://dimap.ufrn.br/~jmarcos/papers/JM/01-CM-ECNSQL.pdf

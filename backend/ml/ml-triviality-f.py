@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
             for i in range(0, iterations):
 
-                predict, AL, parameters = helpers.layers(DATA, LABELS, parameters, .25)
+                predict, AL, parameters = helpers.layers(DATA, LABELS, parameters, .15)
 
                 if (predict == TEST).all():
                     found = i
@@ -28,15 +28,15 @@ if __name__ == '__main__':
             return parameters
 
 
-        DATA = np.array([[1,0], [1,0], [0,0], [1,1], [0,1]])
-        LABELS = np.array([[0, 0, 1, 1, 1]])
-        TEST = np.array([[False, False, True, True, True]])
+        DATA = np.array([[1,0], [0,0], [1,1], [0,1]])
+        LABELS = np.array([[0, 0, 0, 0]])
+        TEST = np.array([[False, False, False, False]])
         # 1st layer is same as DATA.T.shape[0]
         LAYERS = np.array([DATA.T.shape[0], DATA.T.shape[1], 1])
 
         MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 100, TEST)
         # print(MODEL)
-        helpers.saveModel(MODEL, 'implication')
+        helpers.saveModel(MODEL, 'triviality-f')
 
         # --------------------------------------------------------------- #
         # Now, let's save off the training data above (results) and ...
@@ -44,39 +44,39 @@ if __name__ == '__main__':
 
         DATA = np.array([[1, 1], [0, 0], [1, 0], [0, 1]])
         testResult = helpers.predict_ann(DATA.T, MODEL)
-        expected = "[[ True  True False  True]]"
+        expected = "[[False False False False]]"
         result = str(testResult)
-        print("Implication test set 1: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
+        print("Triviality-F test set 1: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[0, 1], [1, 1], [1, 1], [0, 1]])
         testResult = helpers.predict_ann(DATA.T, MODEL)
-        expected = "[[ True  True  True  True]]"
+        expected = "[[False False False False]]"
         result = str(testResult)
-        print("Implication test set 2: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
+        print("Triviality-F test set 2: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[1, 1], [0, 1], [1, 0], [1, 0]])
         testResult = helpers.predict_ann(DATA.T, MODEL)
-        expected = "[[ True  True False False]]"
+        expected = "[[False False False False]]"
         result = str(testResult)
-        print("Implication test set 3: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
+        print("Triviality-F test set 3: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[0, 1], [1, 0], [1, 1], [0, 0], [1, 1], [0, 0]])
         testResult = helpers.predict_ann(DATA.T, MODEL)
-        expected = "[[ True False  True  True  True  True]]"
+        expected = "[[False False False False False False]]"
         result = str(testResult)
-        print("Implication test set 4: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
+        print("Triviality-F test set 4: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[0,0], [1,1], [0,1], [1,0]])
         testResult = helpers.predict_ann(DATA.T, MODEL)
-        expected = "[[ True  True  True False]]"
+        expected = "[[False False False False]]"
         result = str(testResult)
-        print("Implication test set 5: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
+        print("Triviality-F test set 5: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[1,0], [1,0], [1,0], [1,0], [1, 1], [0, 0]])
         testResult = helpers.predict_ann(DATA.T, MODEL)
-        expected = "[[False False False False  True  True]]"
+        expected = "[[False False False False False False]]"
         result = str(testResult)
-        print("Implication test set 6: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
+        print("Triviality-F test set 6: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
     except Exception as ex:
 

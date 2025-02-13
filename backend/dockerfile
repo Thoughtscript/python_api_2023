@@ -13,6 +13,7 @@ RUN cd ml && python3 -m pip install -r requirements.txt
 # the logs for these scripts will now show in Docker Desktop
 RUN cd ml && python3 ml-conjunction.py && python3 ml-disjunction.py && python3 ml-implication.py && python3 ml-negation.py 
 RUN cd ml && python3 ml-nand.py && python3 ml-xor.py && python3 ml-biconditional.py
+RUN cd ml && python3 ml-triviality-f.py && python3 ml-triviality-t.py
 
 # this is apparently a required dependency of SQLAlchemy
 RUN apt-get update && apt-get install -y default-mysql-client default-libmysqlclient-dev

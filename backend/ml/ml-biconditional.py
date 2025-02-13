@@ -65,31 +65,43 @@ if __name__ == '__main__':
         # pass in a fresh set of data
 
         DATA = np.array([[1, 1], [0, 0], [1, 0], [0, 1]])
-        testResult1 = helpers.predict_ann(DATA.T, MODEL)
-        print("Test set 1: " + str(testResult1) + " from " + str(DATA))
+        testResult = helpers.predict_ann(DATA.T, MODEL)
+        expected = "[[ True  True False False]]"
+        result = str(testResult)
+        print("Biconditional test set 1: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[0, 1], [1, 1], [1, 1], [0, 1]])
-        testResult2 = helpers.predict_ann(DATA.T, MODEL)
-        print("Test set 2: " + str(testResult2) + " from " + str(DATA))
+        testResult = helpers.predict_ann(DATA.T, MODEL)
+        expected = "[[False  True  True False]]"
+        result = str(testResult)
+        print("Biconditional test set 2: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[1, 1], [1, 1], [1, 1], [1, 1]])
-        testResult3 = helpers.predict_ann(DATA.T, MODEL)
-        print("Test set 3: " + str(testResult3) + " from " + str(DATA))
+        testResult = helpers.predict_ann(DATA.T, MODEL)
+        expected = "[[ True  True  True  True]]"
+        result = str(testResult)
+        print("Biconditional test set 3: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[0, 1], [0, 1], [0, 1], [0, 1]])
-        testResult4 = helpers.predict_ann(DATA.T, MODEL)
-        print("Test set 4: " + str(testResult4) + " from " + str(DATA))
+        testResult = helpers.predict_ann(DATA.T, MODEL)
+        expected = "[[False False False False]]"
+        result = str(testResult)
+        print("Biconditional test set 4: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([[0, 0], [0, 0], [0, 0], [0, 0]])
-        testResult5 = helpers.predict_ann(DATA.T, MODEL)
-        print("Test set 5: " + str(testResult5) + " from " + str(DATA))
+        testResult = helpers.predict_ann(DATA.T, MODEL)
+        expected = "[[ True  True  True  True]]"
+        result = str(testResult)
+        print("Biconditional test set 5: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
         DATA = np.array([
-            [1, 1], [0, 0], [1, 0], [0, 1], [1, 1], [0,0], [1,0], [0,1], 
-            [1, 1], [0, 0], [1, 0], [0, 1], [1, 1], [0,0], [1,0], [0,1]
+            [1, 1], [0, 0], [1, 0], [0, 1], 
+            [1, 1], [0,0], [1,0], [0,1]
         ])
-        testResult6 = helpers.predict_ann(DATA.T, MODEL)
-        print("Test set 6: " + str(testResult6) + " from " + str(DATA))
+        testResult = helpers.predict_ann(DATA.T, MODEL)
+        expected = "[[ True  True False False  True  True False False]]"
+        result = str(testResult)
+        print("Biconditional test set 6: " + result + " from " + str(DATA).replace("\n", "") + " passed: " + str(result == expected))
 
     except Exception as ex:
 

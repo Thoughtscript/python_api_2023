@@ -5,7 +5,7 @@
 This example is actually three examples in one (sorry, crunched for time!):
 
 1. A basic CRUD REST API with backing database and minimum viable User Interface built in Angular.
-2. A suite of [Machine Learning models](backend/ml/README.md) built to *teach* a computer how to use logic (*Statistically*, through Linear Regression rather than to stipulate Boolean Algebra as such through *Imperative* programming languages) whilst adding XOR, NAND, and Biconditional.
+2. A suite of [Machine Learning models](backend/ml/README.md) built to *teach* a computer how to use (Classical, [Zero Order](https://www.thoughtscript.io/papers/000000000001)) logic (*Statistically*, through Linear Regression rather than to stipulate Boolean Algebra as such through *Imperative* programming languages) whilst adding XOR, NAND, and Biconditional. Philosophically this aligns with [Putnam's](https://philpapers.org/rec/PUTILE) approach.
 3. To expose those Machine Learning models through an API accessible only through [Postman](postman/Python%20ML%20API.postman_collection.json) since examples about how to do this easily seem lacking.
 
 ## Use
@@ -52,6 +52,8 @@ That should spin up each subservice. Otherwise, you can launch each service indi
     python3 ml-nand.py
     python3 ml-xor.py
     python3 ml-biconditional.py
+    python3 ml-triviality-f.py
+    python3 ml-triviality-t.py
     ```
 
    To generate the Machine Learning models.
@@ -541,6 +543,126 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
                 false,
                 true,
                 true
+            ]
+        ]
+    ]
+    ``` 
+
+1. **Triviality-T**
+    * "Triviality-T" - Evaluates `True` regardless. (Consequence of the [Principle of Explosion](https://dimap.ufrn.br/~jmarcos/papers/JM/01-CM-ECNSQL.pdf) or *ex contradictione sequitur quodlibet* or *Triviality* - the logic is insufficient for reasoning.)
+    * Supply sequences of `0,1` (left argument `False`, right argument `True`), `1,1` (left argument `True`, right argument `True`), `1,0` (left argument `True`, right argument `False`), `0,0` (left argument `False`, right argument `False`).
+    * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
+        * `1,0` at index `i` will map to `true` at index `i`.
+    * Docker `POST http://localhost:5001/api/logic/trivialityt?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
+    * Standalone `POST http://localhost:5001/api/logic/trivialityt?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
+
+    Response:
+    ```JSON
+    [
+        [
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ]
+        ],
+        [
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ]
+        ]
+    ]
+    ``` 
+
+1. **Triviality-F**
+    * "Triviality-F" - Evaluates `False` regardless. (Consequence of the [Principle of Explosion](https://dimap.ufrn.br/~jmarcos/papers/JM/01-CM-ECNSQL.pdf) or *ex contradictione sequitur quodlibet* or *Triviality* - the logic is insufficient for reasoning.)
+    * Supply sequences of `0,1` (left argument `False`, right argument `True`), `1,1` (left argument `True`, right argument `True`), `1,0` (left argument `True`, right argument `False`), `0,0` (left argument `False`, right argument `False`).
+    * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
+        * `1,0` at index `i` will map to `false` at index `i`.
+    * Docker `POST http://localhost:5001/api/logic/trivialityt?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
+    * Standalone `POST http://localhost:5001/api/logic/trivialityt?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
+
+    Response:
+    ```JSON
+    [
+        [
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ]
+        ],
+        [
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
             ]
         ]
     ]

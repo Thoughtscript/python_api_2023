@@ -737,6 +737,218 @@
 					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            1\n        ]\n    ],\n    [\n        [\n            true,\n            true,\n            false,\n            false,\n            true,\n            true,\n            false,\n            false,\n            true,\n            false,\n            false,\n            false,\n            true,\n            true\n        ]\n    ]\n]"
 				}
 			]
+		},
+		{
+			"name": "Triviality-T",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"  pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([true, true, true, true, true, true, true, true])\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/logic/trivialityt?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"logic",
+						"trivialityt"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Triviality-T",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/trivialityt?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"trivialityt"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 17:17:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "367"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ]\n    ],\n    [\n        [\n            true,\n            true,\n            true,\n            true,\n            true,\n            true,\n            true,\n            true\n        ]\n    ]\n]"
+				}
+			]
+		},
+		{
+			"name": "Triviality-F",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"  pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([false, false, false, false, false, false, false, false])\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/logic/trivialityf?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"logic",
+						"trivialityf"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Triviality-F",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/trivialityf?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"trivialityf"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 17:17:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ]\n    ],\n    [\n        [\n            false,\n            false,\n            false,\n            false,\n            false,\n            false,\n            false,\n            false\n        ]\n    ]\n]"
+				}
+			]
 		}
 	]
 }
