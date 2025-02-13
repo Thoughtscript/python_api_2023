@@ -5,7 +5,7 @@
 This example is actually three examples in one (sorry, crunched for time!):
 
 1. A basic CRUD REST API with backing database and minimum viable User Interface built in Angular.
-2. A suite of [Machine Learning models](backend/ml/README.md) built to *teach* a computer how to use logic (*Statistically*, through Linear Regression rather than to stipulate Boolean Algebra as such through *Imperative* programming languages) whilst adding XOR and NAND.
+2. A suite of [Machine Learning models](backend/ml/README.md) built to *teach* a computer how to use logic (*Statistically*, through Linear Regression rather than to stipulate Boolean Algebra as such through *Imperative* programming languages) whilst adding XOR, NAND, and Biconditional.
 3. To expose those Machine Learning models through an API accessible only through [Postman](postman/Python%20ML%20API.postman_collection.json) since examples about how to do this easily seem lacking.
 
 ## Use
