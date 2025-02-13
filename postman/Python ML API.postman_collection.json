@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a351bf81-3039-421e-bc44-6b3ae7ad97a9",
+		"_postman_id": "cf66832b-fc36-42b1-afee-6b88312a36fe",
 		"name": "Python ML API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22810484"
@@ -50,7 +50,65 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Disjunction",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/disjunction?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"disjunction"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 04:42:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "369"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ]\n    ],\n    [\n        [\n            true,\n            false,\n            true,\n            true,\n            true,\n            false,\n            true,\n            true\n        ]\n    ]\n]"
+				}
+			]
 		},
 		{
 			"name": "Implication",
@@ -96,7 +154,65 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Implication",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/implication?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"implication"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 04:42:22 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "369"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ]\n    ],\n    [\n        [\n            true,\n            true,\n            false,\n            true,\n            true,\n            true,\n            false,\n            true\n        ]\n    ]\n]"
+				}
+			]
 		},
 		{
 			"name": "Conjunction",
@@ -142,7 +258,65 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Conjunction",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/conjunction?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"conjunction"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 04:42:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "373"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ]\n    ],\n    [\n        [\n            true,\n            false,\n            false,\n            false,\n            true,\n            false,\n            false,\n            false\n        ]\n    ]\n]"
+				}
+			]
 		},
 		{
 			"name": "Negation",
@@ -188,7 +362,65 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Negation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/negation?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"negation"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 04:42:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "201"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ]\n    ],\n    [\n        [\n            false,\n            true,\n            false,\n            true\n        ]\n    ]\n]"
+				}
+			]
 		},
 		{
 			"name": "Nand",
@@ -234,7 +466,171 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Nand",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/nand?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"nand"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 04:42:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "369"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ]\n    ],\n    [\n        [\n            false,\n            true,\n            true,\n            true,\n            false,\n            true,\n            true,\n            true\n        ]\n    ]\n]"
+				}
+			]
+		},
+		{
+			"name": "Xor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"  pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"JSON response body test\", () => {\r",
+							"  const responseJson = pm.response.json()[1];\r",
+							"  pm.expect(responseJson[0]).to.eql([false, false, true, true, false, false, true, true, false, true, true, true])\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/logic/xor?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"logic",
+						"xor"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Xor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logic/xor?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logic",
+								"xor"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.6 Python/3.8.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 04:44:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "540"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            1,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ],\n        [\n            0,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            1,\n            0\n        ],\n        [\n            0,\n            1\n        ]\n    ],\n    [\n        [\n            false,\n            false,\n            true,\n            true,\n            false,\n            false,\n            true,\n            true,\n            false,\n            true,\n            true,\n            true\n        ]\n    ]\n]"
+				}
+			]
 		}
 	]
 }

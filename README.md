@@ -83,6 +83,7 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
 > This mirrors research into how one might try to ***teach*** a computer logic ***rather than just stipulate how logic works*** like we do within programming languages. Read more [here](backend/ml/README.md).
 
 1. **Negation**
+    * "NOT" - Reverses the truth value of the supplied expression.
     * Supply sequences of `0,0` (`False`) or `1,1` (`True`)
     * Will reject any invalid pair (e.g. - `1,0`, `0,1`)
     * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:
@@ -123,6 +124,7 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
     ```
 
 1. **Conjunction**
+    * "AND" - Evaluates `True` only if both conjuncts are `True`.
     * Supply sequences of `0,1` (left conjunct `False`, right conjunct `True`), `1,1` (left conjunct `True`, right conjunct `True`), `1,0` (left conjunct `True`, right conjunct `False`), `0,0` (left conjunct `False`, right conjunct `False`).
     * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
         * `1,1` at index `i` will map to `true` at index `i`.
@@ -182,6 +184,7 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
     ```
 
 1. **Implication**
+    * "Material Implication" - Evaluates `False` only if the antecedant is `True` and the consequent `False`. (Not to be confused with the imperative conditional - e.g. `if { ... }` in most programming languages.)
     * Supply sequences of `0,1` (antecedant `False`, consequent `True`), `1,1` (antecedant `True`, consequent `True`), `1,0` (antecedant `True`, consequent `False`), `0,0` (antecedant `False`, consequent `False`).
     * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
         * `1,0` at index `i` will map to `false` at index `i`.
@@ -241,7 +244,8 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
     ```
 
 1. **Disjunction**
-    * Supply sequences of `0,1` (left conjunct `False`, right conjunct `True`), `1,1` (left conjunct `True`, right conjunct `True`), `1,0` (left conjunct `True`, right conjunct `False`), `0,0` (left conjunct `False`, right conjunct `False`).
+    * "OR" - Evaluates `True` if either disjunct is `True` (or both).
+    * Supply sequences of `0,1` (left disjunct `False`, right disjunct `True`), `1,1` (left disjunct `True`, right disjunct `True`), `1,0` (left disjunct `True`, right disjunct `False`), `0,0` (left disjunct `False`, right disjunct `False`).
     * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
         * `1,0` at index `i` will map to `true` at index `i`.
     * Docker `POST http://localhost:5001/api/logic/disjunction?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1`
@@ -300,6 +304,7 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
     ```
 
 1. **NAND**
+    * "NOT-AND" - Evaluates `True` only if the expression isn't a `True` **Conjunction**.
     * Supply sequences of `0,1` (left conjunct `False`, right conjunct `True`), `1,1` (left conjunct `True`, right conjunct `True`), `1,0` (left conjunct `True`, right conjunct `False`), `0,0` (left conjunct `False`, right conjunct `False`).
     * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
         * `1,0` at index `i` will map to `true` at index `i`.
@@ -357,6 +362,86 @@ Also, inferences are included that exceed the standard Boolean operations (**Mat
         ]
     ]
     ```
+
+1. **XOR**
+    * "Exclusive OR" - Evaluates `True` only if neither disjunct is the same. (Evaluates `True` if either disjunct is `True` but not both.)
+    * Supply sequences of `0,1` (left disjunct `False`, right disjunct `True`), `1,1` (left disjunct `True`, right disjunct `True`), `1,0` (left disjunct `True`, right disjunct `False`), `0,0` (left disjunct `False`, right disjunct `False`).
+    * Each result will contain two parts with each entry in the first mapped to the result in the second by same index:  
+        * `1,0` at index `i` will map to `true` at index `i`.
+    * Docker `POST http://localhost:5001/api/logic/xor?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1`
+    * Standalone `POST http://localhost:5000/api/logic/xor?test=1,1|0,0|1,0|0,1|1,1|0,0|1,0|0,1|0,0|1,0|1,0|0,1`
+
+    Response:
+    ```JSON
+    [
+        [
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                0,
+                1
+            ]
+        ],
+        [
+            [
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                true
+            ]
+        ]
+    ]
+    ``` 
 
 ### DB API
 

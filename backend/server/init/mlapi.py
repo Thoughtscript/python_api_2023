@@ -20,6 +20,7 @@ NEGATION_MODEL = helpers.loadModel('negation.npy')
 CONJUNCTION_MODEL = helpers.loadModel('conjunction.npy')
 IMPLICATION_MODEL = helpers.loadModel('implication.npy')
 NAND_MODEL = helpers.loadModel('nand.npy')
+XOR_MODEL = helpers.loadModel('xor.npy')
 
 async def handleRequest(request, reject_unsame = False):
     data = request.args.get('test', '')
@@ -74,4 +75,11 @@ async def nand():
     input = await handleRequest(request)
     DATA = np.array(input)
     response = helpers.predict_ann(DATA.T, NAND_MODEL)
+    return [input, response.tolist()]
+
+@app.route("/api/logic/xor", methods=['POST'])
+async def xor():
+    input = await handleRequest(request)
+    DATA = np.array(input)
+    response = helpers.predict_ann(DATA.T, XOR_MODEL)
     return [input, response.tolist()]

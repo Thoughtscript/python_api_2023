@@ -432,6 +432,64 @@ These should cover the basic **Truth-Tables** for **Classical / Boolean Algebra*
        [0 1]]
       ```
 
+6. XOR: set `1.155`
+   
+      ```bash
+      python3 ml-xor.py
+
+      Data entry 1&0 with label 1
+      Data entry 0&1 with label 1
+      Data entry 1&1 with label 0
+      Data entry 0&0 with label 0
+      Data entry 1&1 with label 0
+      Data entry 1&0 with label 1
+      Data entry 0&1 with label 1
+      Data entry 1&1 with label 0
+      Data entry 0&1 with label 1
+      Data entry 0&0 with label 0
+      Data entry 1&0 with label 1
+      Data entry 0&0 with label 0
+      Data entry 0&1 with label 1
+
+      [[0.52160566 0.44295413 0.54657634 0.5        0.54657634 0.52160566
+        0.44295413 0.54657634 0.44295413 0.5        0.52160566 0.5
+        0.44295413]]
+      Predict: [[ True False  True False  True  True False  True False False  True False
+        False]]
+      [[0.63949558 0.48711335 0.59751051 0.51231344 0.59751051 0.63949558
+        0.48711335 0.59751051 0.48711335 0.51231344 0.63949558 0.51231344
+        0.48711335]]
+      Predict: [[ True False  True  True  True  True False  True False  True  True  True
+        False]]
+      [[0.69987554 0.51180049 0.62148149 0.52517796 0.62148149 0.69987554
+        0.51180049 0.62148149 0.51180049 0.52517796 0.69987554 0.52517796
+        0.51180049]]
+      Predict: [[ True  True  True  True  True  True  True  True  True  True  True  True
+         True]]
+      [[0.7169037  0.5241609  0.6179902  0.52975462 0.6179902  0.7169037
+        0.5241609  0.6179902  0.5241609  0.52975462 0.7169037  0.52975462
+        0.5241609 ]]
+      Predict: [[ True  True  True  True  True  True  True  True  True  True  True  True
+         True]]
+      [[0.70615874 0.55086346 0.58603203 0.52410009 0.58603203 0.70615874
+        0.55086346 0.58603203 0.55086346 0.52410009 0.70615874 0.52410009
+        0.55086346]]
+      Predict: [[ True  True  True  True  True  True  True  True  True  True  True  True
+         True]]
+      [[0.68434138 0.54562133 0.52769492 0.50623664 0.52769492 0.68434138
+        0.54562133 0.52769492 0.54562133 0.50623664 0.68434138 0.50623664
+        0.54562133]]
+      Predict: [[ True  True  True  True  True  True  True  True  True  True  True  True
+         True]]
+      [[0.68031778 0.53535909 0.48788968 0.49623155 0.48788968 0.68031778
+        0.53535909 0.48788968 0.53535909 0.49623155 0.68031778 0.49623155
+        0.53535909]]
+      Predict: [[ True  True False False False  True  True False  True False  True False
+        True]]
+      ANN arrived at conclusion: [[ True  True False False False  True  True False  True False  True False
+         True]] after 6 iterations
+      ```
+
 ## An Alternative Approach
 
 Before I got the **Learning Rates** correct, I was thinking it might be beyond my current skillset to *teach* an arbitrary machine how to do Boolean Algebra. Here's an alternative path/signpost, since **Negation** and **Conjunction** are 100% accurate one can interdefine the other two:

@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
             for i in range(0, iterations):
 
-                predict, AL, parameters = helpers.layers(DATA, LABELS, parameters, 1.175)
+                predict, AL, parameters = helpers.layers(DATA, LABELS, parameters, 1.155)
 
                 if (predict == TEST).all():
                     found = i
@@ -28,15 +28,15 @@ if __name__ == '__main__':
             return parameters
 
 
-        DATA = np.array([[1,0], [0,1], [1,1], [0,0], [1,1]])
-        LABELS = np.array([[1, 1, 0, 1, 0]])
-        TEST = np.array([[True, True, False, True,  False]])
+        DATA = np.array([[1,0], [0,1], [1,1], [0,0], [1,1], [1,0], [0,1], [1,1], [0,1], [0,0], [1,0], [0,0], [0,1]])
+        LABELS = np.array([[1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1]])
+        TEST = np.array([[True, True, False, False, False, True, True, False, True, False, True, False, True]])
         # 1st layer is same as DATA.T.shape[0]
         LAYERS = np.array([DATA.T.shape[0], DATA.T.shape[1], 1])
 
         MODEL = train_ml_ann(DATA.T, LABELS, LAYERS, 100, TEST)
         # print(MODEL)
-        helpers.saveModel(MODEL, 'nand')
+        helpers.saveModel(MODEL, 'xor')
 
         # --------------------------------------------------------------- #
         # Now, let's save off the training data above (results) and ...
