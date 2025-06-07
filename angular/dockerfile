@@ -1,4 +1,4 @@
-FROM node:22.3.0
+FROM node:22.12.0
 
 RUN echo "Creating working dir and copying files"
 RUN mkdir /app
